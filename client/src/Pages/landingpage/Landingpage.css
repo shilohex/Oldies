@@ -1,0 +1,28 @@
+.abt {
+  display: flex;
+  gap: 30px;
+}
+
+/* Basic styling for the search button */
+#search {
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+/* Style the input box */
+#search input[type="text"] {
+  padding: 5px;
+  /* border: 1px solid #ccc; */
+  border-radius: 8px;
+  width: 200px;
+  outline: none;
+}
+
+.hr {
+  color: #31525b;
+  width: 10px;
+}
+
+#body {
+  background-color: #b3dee5;
+}
