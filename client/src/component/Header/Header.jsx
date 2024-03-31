@@ -45,13 +45,13 @@ const Header = ({ bgcol, txtcol }) => {
           <div className="">
             <button className="button">
               {" "}
-              <Link to={"./signup"}>Sign in</Link>
+              <Link to={"./signup"}>Sign up</Link>
             </button>
           </div>
           <div>
             <button className="button">
               {" "}
-              <Link to={"./signup"}>Sign up</Link>
+              <Link to={"./signup"}>Login</Link>
             </button>
           </div>
 

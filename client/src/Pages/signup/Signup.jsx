@@ -174,7 +174,7 @@ const Signup = () => {
                   </svg>
                   <span class="ml-2">Sign up with Google</span>
                 </button>
-                <button class="flex items-center justify-center py-2 px-20 bg-white hover:bg-[#f8e5c4] focus:ring-blue-sec focus:ring-offset-pry text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg mt-4">
+                <button class="flex items-center justify-center py-2 px-20 bg-white hover:bg-[#f8e5c4] focus:ring-sec focus:ring-offset-pry text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg mt-4">
                   <svg
                     viewBox="0 0 30 30"
                     height="30"
@@ -191,7 +191,7 @@ const Signup = () => {
             </div>
             <div class="mt-5">
               <button
-                class="py-2 px-4 bg-pry hover:bg-[#f8e5c4] focus:ring-pry focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                class="py-2 px-4 bg-white hover:bg-pry focus:ring-sec focus:ring-offset-blue-200 text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
                 type="submit"
               >
                 Sign up
