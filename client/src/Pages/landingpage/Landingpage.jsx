@@ -16,15 +16,28 @@ const Landingpage = () => {
     <div>
       <Header />
       {/* <p className="border p-10">i mutds</p> */}
-      <div id="body" className="border-r">
-        <p>Funitures</p>
-        <p>Antiques</p>
-        <p>Thrift shops</p>
+      <div className="flex  w-[100%]">
+        <div
+          id="body"
+          className="border-r w-[100]  mb-[59%] flex justify-evenly gap-0 "
+        >
+          <div>
+            <img
+              className="w-full m-0 p-0 absolute flex"
+              src="https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg"
+              alt=""
+            />
+          </div>
+
+          <div className="relative flex justify-center mt-[10%] text-center gap-5 text-white">
+            <p>Funitures</p>
+            <p>Antiques</p>
+            <p>Thrift shops</p>
+            <p>Electronics</p>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="" alt="" className=" border-l flex-col" />
-      </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import "./signup.css";
 const Signup = () => {
   return (
     <>
-      <div className="body">
+      <div className="body ">
         <div className="relative py-3 sm:max-w-xl sm:mx-auto">
           <div className="relative px-4 py-10 bg-sec mx-8 md:mx-0 shadow-2xl  rounded-3xl sm:p-10">
             <div className="max-w-md mx-auto text-white">

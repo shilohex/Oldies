@@ -1,17 +1,11 @@
-// var http = require("http");
-
-// http
-//   .createServer(function (req, res) {
-//     res.end("Hello world\n");
-//   })
-//   .listen(8081);
-// console.log("Server listening on port 8081");
-
 const express = require("express");
 const cors = require("cors");
-
+const connectdb = require("./db");
+const dotenv = require("dotenv");
 const app = express();
 const port = 5001;
+const User = require("./models/userModel");
+
 const countries = [
   {
     name: "India",
@@ -39,7 +33,8 @@ const countries = [
     population: 1350000000,
   },
 ];
-
+dotenv.config();
+connectdb();
 const users = [
   {
     Username: "teslim",
@@ -78,6 +73,17 @@ app.post("login", (req, res) => {
   }
 });
 
+app.get("/addUser", (req, res) => {
+  const newuser = new User({
+    username: "tessy",
+    password: "tessy",
+    email: "tessy",
+    address: "123 Bentevi avenue",
+  });
+  const addedUser = newuser.save();
+  res.send(addedUser);
+});
+
 app.use(
   cors({
     origin: "http://localhost:5173",
@@ -100,3 +106,12 @@ app.post("/login", (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+// var http = require("http");
+
+// http
+//   .createServer(function (req, res) {
+//     res.end("Hello world\n");
+//   })
+//   .listen(8081);
+// console.log("Server listening on port 8081");
