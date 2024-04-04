@@ -4,6 +4,7 @@ import icon from "../../assets/icon.png";
 import "./Landingpage.css";
 import heart from "../../assets/heart.png";
 import shop from "../../assets/shoppingcrt.png";
+import Footer from "../../component/Footer/Footer";
 const Landingpage = () => {
   useEffect(() => {
     fetch("http://localhost:5001/countries")
@@ -23,6 +24,7 @@ const Landingpage = () => {
       <div>
         <img src="" alt="" className=" border-l flex-col" />
       </div>
+      <Footer/>
     </div>
   );
 };

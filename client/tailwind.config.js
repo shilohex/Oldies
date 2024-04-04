@@ -6,7 +6,7 @@ export default {
       colors: {
         pry: "#ffa101",
         sec: "#b3dee5",
-        sec2: "#",
+        sec2: "#31525B",
       },
     },
   },

@@ -20,7 +20,7 @@ const Header = ({ bgcol, txtcol }) => {
           </div>
         </div>
 
-        <div className="flex items-start justify-evenly py-5 px-8 border-b">
+        <div className="flex items-center justify-evenly py-5 px-8 border-b">
           <img src={logo} className="w-20" alt="" />
           <div className="abt">
             <p>Contact</p>
@@ -42,18 +42,21 @@ const Header = ({ bgcol, txtcol }) => {
               </button>
             </form>
           </div>
-          <div className="">
-            <button className="button">
-              {" "}
-              <Link to={"./signup"}>Sign up</Link>
-            </button>
+          <div className="group relative">
+              <p className="bg-pry px-2 py-1 rounded">Sign up</p>
+            <div className="hidden shadow-md rounded group-hover:flex bg-white absolute text-black top-full -left-1/2 flex-col gap-2 p-4">
+              <Link to={'/vendor/signup'} className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm">Vendor</Link>
+              <Link to={'/signup'} className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm">Buyer</Link>
+            </div>
           </div>
-          <div>
-            <button className="button">
-              {" "}
-              <Link to={"./signup"}>Login</Link>
-            </button>
+          <div className="group relative">
+              <p className="bg-pry px-2 py-1 rounded">Login</p>
+            <div className="hidden shadow-md rounded group-hover:flex bg-white absolute text-black top-full -left-1/2 flex-col gap-2 p-4">
+              <Link to={'/vendor/login'} className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm">Vendor</Link>
+              <Link to={'/login'} className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm">Buyer</Link>
+            </div>
           </div>
+          
 
           <div className="flex  space-x-12">
             <img src={heart} className="w-7" alt="" />

@@ -27,8 +27,8 @@
 .button {
   background-color: #ffa101;
   border: 1px #ffa101 solid;
-  padding: 5px 8px;
-  border-radius: 5px;
+  padding: 4px 8px;
+  border-radius: 4px;
   box-shadow: 0.2 0.2 0.2 black;
 }
 .button:hover {

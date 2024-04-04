@@ -1,9 +1,5 @@
-import React from "react";
-import Header from "../../component/Header/Header";
 import "./signup.css";
-import logo from "../../assets/logo3.png";
-import TxtInput from "../../component/input/TxtInput";
-import { Link } from "react-router-dom";
+import React from "react";
 
 const Signup = () => {
   return (
@@ -18,7 +14,7 @@ const Signup = () => {
                     className="font-semibold text-sm text-black pb-1 block"
                     for="fullname"
                   >
-                    Full Name
+                    Shop Name*
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
@@ -29,9 +25,35 @@ const Signup = () => {
                 <div>
                   <label
                     className="font-semibold text-sm text-black pb-1 block"
+                    for="fullname"
+                  >
+                    Shop Address*
+                  </label>
+                  <input
+                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
+                    type="text"
+                    id="fullname"
+                  />
+                </div>
+                <div>
+                  <label
+                    className="font-semibold text-sm text-black pb-1 block"
+                    for="fullname"
+                  >
+                    Number(optional)
+                  </label>
+                  <input
+                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
+                    type="number"
+                    id="fullname"
+                  />
+                </div>
+                <div>
+                  <label
+                    className="font-semibold text-sm text-black pb-1 block"
                     for="email"
                   >
-                    Email
+                    Email*
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
@@ -44,7 +66,7 @@ const Signup = () => {
                     className="font-semibold text-sm text-black pb-1 block"
                     for="username"
                   >
-                    Username
+                    Password*
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
@@ -57,7 +79,7 @@ const Signup = () => {
                     className="font-semibold text-sm text-black pb-1 block"
                     for="password"
                   >
-                    Password
+                    Confirm Password*
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
@@ -215,23 +237,6 @@ const Signup = () => {
         </div>
       </div>
     </>
-    // <div className="flex w-full justify-center items-center h-[100vh] text-center border">
-    //   <div>
-    //     {" "}
-    //     <img src={logo} className=" w-20 mx-auto border" alt="" />
-    //     <div className=" ">
-    //       <h1>Welcome to Oldies</h1>
-    //       <p>
-    //         Type your e-mail or phone number to log in or create a Oldies
-    //         account.
-    //       </p>
-    //     </div>
-    //     <div>
-    //       <TxtInput labeltxt="Username" />
-    //       <TxtInput labeltxt="Password" inptype="password" />
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
