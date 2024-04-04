@@ -25,6 +25,32 @@ const signupv = () => {
                 <div>
                   <label
                     className="font-semibold text-sm text-black pb-1 block"
+                    for="fullname"
+                  >
+                    Shop Address*
+                  </label>
+                  <input
+                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
+                    type="text"
+                    id="fullname"
+                  />
+                </div>
+                <div>
+                  <label
+                    className="font-semibold text-sm text-black pb-1 block"
+                    for="fullname"
+                  >
+                    Number(optional)
+                  </label>
+                  <input
+                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
+                    type="number"
+                    id="fullname"
+                  />
+                </div>
+                <div>
+                  <label
+                    className="font-semibold text-sm text-black pb-1 block"
                     for="email"
                   >
                     Email*
@@ -40,7 +66,7 @@ const signupv = () => {
                     className="font-semibold text-sm text-black pb-1 block"
                     for="username"
                   >
-                    Shop Address*
+                    Password*
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
@@ -53,7 +79,7 @@ const signupv = () => {
                     className="font-semibold text-sm text-black pb-1 block"
                     for="password"
                   >
-                    Password*
+                    Confirm Password*
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"

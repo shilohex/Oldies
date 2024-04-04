@@ -18,6 +18,7 @@ const Landingpage = () => {
       <div id="body" className="border-r">
         <p>Funiture</p>
         <p>Kichen utensil</p>
+        <p>clothes</p>
       </div>
       <div>
         <img src="" alt="" className=" border-l flex-col" />
