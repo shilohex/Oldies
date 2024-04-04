@@ -16,9 +16,9 @@ const Landingpage = () => {
       <Header />
       {/* <p className="border p-10">i mutds</p> */}
       <div id="body" className="border-r">
-        <p>Funiture</p>
+        <p>Funitures</p>
         <p>Antiques</p>
-        <p>Thrift</p>
+        <p>Thrift shops</p>
       </div>
       <div>
         <img src="" alt="" className=" border-l flex-col" />
