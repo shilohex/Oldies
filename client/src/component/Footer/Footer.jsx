@@ -13,6 +13,9 @@ const Footer = () => {
             recusandae sit quis suscipit ratione sint, libero minima ullam
             assumenda veniam consectetur.
           </p>
+          <div>
+            <img src="" alt="" />
+          </div>
 
           <div>{/* for social media icons */}</div>
         </div>

@@ -5,6 +5,8 @@ import "./Landingpage.css";
 import heart from "../../assets/heart.png";
 import shop from "../../assets/shoppingcrt.png";
 import Footer from "../../component/Footer/Footer";
+import tops from "../../assets/thrifttop.jpeg";
+import { Link } from "react-router-dom";
 const Landingpage = () => {
   useEffect(() => {
     fetch("http://localhost:5001/countries")
@@ -13,30 +15,31 @@ const Landingpage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="w-[100%] " id="landing">
       <Header />
       {/* <p className="border p-10">i mutds</p> */}
-      <div className="flex  w-[100%]">
-        <div
-          id="body"
-          className="border-r w-[100]  mb-[59%] flex justify-evenly gap-0 "
-        >
-          <div>
-            <img
-              className="w-full m-0 p-0 absolute flex"
-              src="https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg"
-              alt=""
-            />
-          </div>
-
-          <div className="relative flex justify-center mt-[10%] text-center gap-5 text-white">
-            <p>Funitures</p>
+      <div className="flex  w-full h-screen relative">
+        <img className="w-full  m-0 p-0 flex" src={tops} alt="" />
+        <div className="w-full h-full text-center absolute text-white justify-around items-center text-[3rem]  bg-[rgba(0,0,0,0.3)] top-0 flex ">
+          <Link to={"/products/furnitures"} className="w-1/5">
+            <img src="" className="w-4/5" alt="" />
+            <p className="hover:underline">Funitures</p>
+          </Link>
+          <Link to={"/products/antiques"} className="w-1/5">
+            <img src="" alt="" />
             <p>Antiques</p>
+          </Link>
+          <Link to={"/products/thrift"} className="w-1/5">
+            <img src="" alt="" />
             <p>Thrift shops</p>
+          </Link>
+          <Link to={"/products/electronics"} className="w-1/5">
+            <img src="" alt="" />
             <p>Electronics</p>
-          </div>
+          </Link>
         </div>
       </div>
+
       <Footer />
     </div>
   );

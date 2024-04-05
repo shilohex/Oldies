@@ -1,16 +1,16 @@
-.abt {
+#landing .abt {
   display: flex;
   gap: 30px;
 }
 
 /* Basic styling for the search button */
-#search {
+#landing #search {
   color: black;
   transition: background-color 0.3s ease;
 }
 
 /* Style the input box */
-#search input[type="text"] {
+#landing #search input[type="text"] {
   padding: 5px;
   /* border: 1px solid #ccc; */
   border-radius: 8px;
@@ -18,9 +18,13 @@
   outline: none;
 }
 
-.hr {
+#landing .hr {
   color: #31525b;
   width: 10px;
+}
+#texts {
+  color: white;
+  size: 50px;
 }
 
 /* #body {

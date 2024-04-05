@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import heart from "../../assets/heart.png";
 import shop from "../../assets/shoppingcrt.png";
 import icon from "../../assets/icon.png";
-import logo from "../../assets/logo3.png";
+import logo from "../../assets/oldieslogo.png";
 
 const Header = ({ bgcol, txtcol }) => {
   return (
     <div>
       <div className="head ">
         <div id="comp" style={{ backgroundColor: bgcol, color: txtcol }}>
-          <div className="nav">
+          <div className="nav ">
             <p>Summer sales for all swim suit free express delivery</p>
             <p>Shop Now</p>
             <div>
@@ -21,7 +21,7 @@ const Header = ({ bgcol, txtcol }) => {
         </div>
 
         <div className="flex items-center justify-evenly py-5 px-8 border-b">
-          <img src={logo} className="w-20" alt="" />
+          <img src={logo} className="w-[7rem]" alt="" />
           <div className="abt">
             <p>Contact</p>
             <p>About</p>
@@ -42,7 +42,7 @@ const Header = ({ bgcol, txtcol }) => {
               </button>
             </form>
           </div>
-          <div className="group relative">
+          <div className="group relative z-10">
             <p className="bg-pry px-2 py-1 rounded">Sign up</p>
             <div className="hidden shadow-md rounded group-hover:flex bg-white absolute text-black top-full -left-1/2 flex-col gap-2 p-4">
               <Link
@@ -59,7 +59,7 @@ const Header = ({ bgcol, txtcol }) => {
               </Link>
             </div>
           </div>
-          <div className="group relative">
+          <div className="group relative z-10">
             <p className="bg-pry px-2 py-1 rounded">Login</p>
             <div className="hidden shadow-md rounded group-hover:flex bg-white absolute text-black top-full -left-1/2 flex-col gap-2 p-4">
               <Link
