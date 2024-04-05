@@ -8,9 +8,9 @@
 
 .head #comp {
   display: flex;
-  background-color: #b3dee5;
+  background-color: #31525b;
   /* backdrop-filter: blur(10px); */
-  color: #31525b;
+  color: #ffa101;
   padding: 5px;
   margin: 0px auto;
   justify-content: center;

@@ -8,7 +8,7 @@
   justify-content: center;
   background-color: rgb(255, 255, 255);
   padding: 30px 30px 30px 30px;
-  box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 25px 50px -12px rgba(241, 157, 101, 0.55);
   position: relative;
   overflow: hidden;
   border-radius: 30px;
@@ -19,7 +19,7 @@
   content: "";
   width: 300px;
   height: 300px;
-  background-color: #b3dee5;
+  background-color: #31525b;
   transform: rotate(45deg);
   left: -180px;
   bottom: 30px;
@@ -29,7 +29,7 @@
 }
 
 .heading {
-  font-size: 2em;
+  font-size: 1em;
   color: #2e2e2e;
   font-weight: 700;
   margin: 5px 0 10px 0;
@@ -66,7 +66,8 @@
 
 .inputField:focus {
   outline: none;
-  border-bottom: 2px solid #b3dee5;
+  border-bottom: 2px solid #ffa101;
+  margin-bottom: 12px;
 }
 
 .inputField::placeholder {
@@ -99,8 +100,8 @@
   z-index: 2;
   font-size: 0.7em;
   font-weight: 500;
-  color: rgb(44, 24, 128);
+  color: black;
   text-decoration: none;
-  padding: 8px 15px;
+  padding: 10px 15px;
   border-radius: 15px;
 }

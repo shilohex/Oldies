@@ -1,20 +1,25 @@
 import React from "react";
-import logo from "../../assets/logo3.png";
+import logo from "../../assets/oldies3.png";
+import { CiFacebook } from "react-icons/ci";
+import { CiTwitter } from "react-icons/ci";
+import { CiInstagram } from "react-icons/ci";
 
 const Footer = () => {
   return (
-    <div className="bg-sec2 px-20 pt-[10%] text-white">
-      <div className="flex justify-between mb-6">
+    <div className="bg-sec2 px-20 pt-[5%] text-white">
+      <div className="flex justify-between mb-9">
         <div className="w-[30%]">
-          <img src={logo} alt="" />
-          <p className="text-[0.75rem] font-medium">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat
-            autem dolore quisquam odit corporis iure, quos repellendus laborum
-            recusandae sit quis suscipit ratione sint, libero minima ullam
-            assumenda veniam consectetur.
+          <img src={logo} className="w-[10rem]" alt="" />
+          <p className="text-[1rem] font-medium">
+            "Oldies" stands out as a premier second-hand selling platform,
+            offering a treasure trove of vintage finds and modern gems. With a
+            commitment to sustainability and affordability, it's the perfect
+            place to discover unique items while reducing your carbon footprint.
           </p>
-          <div>
-            <img src="" alt="" />
+          <div className="w-[10rem]  flex gap-5 mt-5 items-center">
+            <CiFacebook />
+            <CiInstagram />
+            <CiTwitter />
           </div>
 
           <div>{/* for social media icons */}</div>
@@ -27,7 +32,7 @@ const Footer = () => {
             <input
               type="text"
               placeholder="Enter your email"
-              className="p-3 rounded outline"
+              className="p-3 rounded outline-pry"
             />
             <button type="submit" className="bg-sec rounded-full w-2/5 py-2 ">
               Subscribe

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./signup.css";
 import React from "react";
 
@@ -6,83 +7,83 @@ const Signup = () => {
     <>
       <div className="body">
         <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-          <div className="relative px-4 py-10 bg-sec mx-8 md:mx-0 shadow-2xl  rounded-3xl sm:p-10">
+          <div className="relative px-4 py-10 bg-sec2 mx-8 md:mx-0 shadow-2xl  rounded-3xl sm:p-10">
             <div className="max-w-md mx-auto text-white">
               <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label
-                    className="font-semibold text-sm text-black pb-1 block"
+                    className="font-semibold text-sm text-white pb-1 block"
                     for="fullname"
                   >
                     Shop Name*
                   </label>
                   <input
-                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
+                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="text"
                     id="fullname"
                   />
                 </div>
                 <div>
                   <label
-                    className="font-semibold text-sm text-black pb-1 block"
+                    className="font-semibold text-sm text-white pb-1 block"
                     for="fullname"
                   >
                     Shop Address*
                   </label>
                   <input
-                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
+                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="text"
                     id="fullname"
                   />
                 </div>
                 <div>
                   <label
-                    className="font-semibold text-sm text-black pb-1 block"
+                    className="font-semibold text-sm text-white pb-1 block"
                     for="fullname"
                   >
                     Number(optional)
                   </label>
                   <input
-                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
+                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="number"
                     id="fullname"
                   />
                 </div>
                 <div>
                   <label
-                    className="font-semibold text-sm text-black pb-1 block"
+                    className="font-semibold text-sm text-white pb-1 block"
                     for="email"
                   >
                     Email*
                   </label>
                   <input
-                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
+                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="email"
                     id="email"
                   />
                 </div>
                 <div>
                   <label
-                    className="font-semibold text-sm text-black pb-1 block"
+                    className="font-semibold text-sm text-white pb-1 block"
                     for="username"
                   >
                     Password*
                   </label>
                   <input
-                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
+                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="text"
                     id="username"
                   />
                 </div>
                 <div>
                   <label
-                    className="font-semibold text-sm text-black pb-1 block"
+                    className="font-semibold text-sm text-white pb-1 block"
                     for="password"
                   >
                     Confirm Password*
                   </label>
                   <input
-                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-sec"
+                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="password"
                     id="password"
                   />
@@ -121,7 +122,7 @@ const Signup = () => {
               </div>
               <div className="flex justify-center items-center">
                 <div>
-                  <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg-[#f8e5c4] focus:ring-sec focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
+                  <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg-[#f8e5c4] focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
                     <svg
                       viewBox="0 0 24 24"
                       height="25"
@@ -198,7 +199,7 @@ const Signup = () => {
                     </svg>
                     <span className="ml-2">Sign up with Google</span>
                   </button>
-                  <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg-[#f8e5c4] focus:ring-sec focus:ring-offset-pry text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg mt-4">
+                  <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg-[#f8e5c4] focus:ring-pry focus:ring-offset-pry text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg mt-4">
                     <svg
                       viewBox="0 0 30 30"
                       height="30"
@@ -215,22 +216,22 @@ const Signup = () => {
               </div>
               <div class="mt-5">
                 <button
-                  className="py-2 px-4 bg-white hover:bg-pry focus:ring-sec focus:ring-offset-blue-200 text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                  className="py-2 px-4 bg-white hover:bg-pry focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
                   type="submit"
                 >
                   Sign up
                 </button>
               </div>
               <div class="flex items-center justify-between mt-4">
-                <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+                <span class="w-1/5 border-b dark:border-pry md:w-1/4"></span>
                 <a
-                  className="text-xs text-black uppercase dark:text-black hover:underline"
+                  className="text-xs text-white uppercase dark:text-white hover:underline"
                   href="#"
                 >
-                  have an account? Log in
+                  <Link to="/vendor/login">have an account? Log in</Link>
                 </a>
 
-                <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+                <span className="w-1/5 border-b dark:border-pry md:w-1/4"></span>
               </div>
             </div>
           </div>
