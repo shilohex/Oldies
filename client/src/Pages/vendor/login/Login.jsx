@@ -25,7 +25,7 @@ const Login = () => {
       .catch((err) => console.log(err));
   }
   return (
-    <div className="bg-[#31525b]">
+    <div className="bb">
       <div className="flex justify-center items-center h-screen">
         <form onSubmit={handleSubmit} action="" className="form_main">
           <p className="heading"> Welcome Back vendors!</p>

@@ -1,3 +1,11 @@
+.bb {
+  background-color: linear-gradient(
+    0deg,
+    #ffffff 0%,
+    #31525b 50%,
+    #b3dee5 100%
+  );
+}
 .form_main {
   /* margin-top: 10vh; */
   width: 25vw;
@@ -30,7 +38,7 @@
 
 .heading {
   font-size: 1em;
-  color: #2e2e2e;
+  color: black;
   font-weight: 700;
   margin: 5px 0 10px 0;
   z-index: 2;
@@ -71,7 +79,7 @@
 }
 
 .inputField::placeholder {
-  color: rgb(80, 80, 80);
+  color: black;
   font-size: 1em;
   font-weight: 500;
 }
