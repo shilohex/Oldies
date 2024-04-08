@@ -1,19 +1,18 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
-import heart from "../../assets/heart.png";
-import shop from "../../assets/shoppingcrt.png";
 import icon from "../../assets/icon.png";
 import logo from "../../assets/oldieslogo.png";
 import { CiHeart } from "react-icons/ci";
 import { FaShoppingBag } from "react-icons/fa";
 
-const Header = ({ bgcol, txtcol }) => {
+const Header = ({ bgcol= 'rgba(255,255,255,0.1)', txtcol = '#fff' }) => {
   return (
-    <div className="fixed top-0 w-screen z-10 bg-[rgba(255,255,255,0.1)]">
+    <div className={`fixed top-0 w-screen z-10 bg-[${bgcol}] text-[${txtcol}]`}>
       <div className="head ">
-        <div id="comp" style={{ backgroundColor: bgcol, color: txtcol }}>
-          <div className="nav ">
+        <div id="comp" className="flex bg-sec2  p-2 mx-auto justify-center text-pry" >
+        {/* style={{ backgroundColor: bgcol, color: txtcol }} */}
+          <div className="nav w-[58%] flex justify-between  ">
             <p>Summer sales for all swim suit free express delivery</p>
             <p>Shop Now</p>
             <div>
@@ -27,8 +26,8 @@ const Header = ({ bgcol, txtcol }) => {
             <img src={logo} className="w-[7rem]" alt="" />
           </Link>
           <div className="flex gap-8">
-            <Link className="hover:text-pry text-white">Contact</Link>
-            <Link className="hover:text-pry text-white" to={"/about"}>
+            <Link className="hover:text-pry ">Contact</Link>
+            <Link className="hover:text-pry" to={"/about"}>
               About
             </Link>
           </div>
