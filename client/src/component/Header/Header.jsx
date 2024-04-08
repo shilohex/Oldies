@@ -5,6 +5,8 @@ import heart from "../../assets/heart.png";
 import shop from "../../assets/shoppingcrt.png";
 import icon from "../../assets/icon.png";
 import logo from "../../assets/oldieslogo.png";
+import { CiHeart } from "react-icons/ci";
+import { FaShoppingBag } from "react-icons/fa";
 
 const Header = ({ bgcol, txtcol }) => {
   return (
@@ -21,16 +23,18 @@ const Header = ({ bgcol, txtcol }) => {
         </div>
 
         <div className="flex items-center justify-evenly py-5 px-8 ">
-          <img src={logo} className="w-[7rem]" alt="" />
+          <Link to={"/"}>
+            <img src={logo} className="w-[7rem]" alt="" />
+          </Link>
           <div className="flex gap-8">
-              <Link className="hover:text-pry text-white" >Contact</Link>            
-              <Link className="hover:text-pry text-white" to={"/about"}>About</Link>
+            <Link className="hover:text-pry text-white">Contact</Link>
+            <Link className="hover:text-pry text-white" to={"/about"}>
+              About
+            </Link>
           </div>
 
           <div>
-            <form
-              className="flex gap-4 rounded-lg border focus-within:border-pry focus-within:border-2 px-2  bg-white"
-            >
+            <form className="flex gap-4 rounded-lg border focus-within:border-pry focus-within:border-2 px-2  bg-white">
               <input
                 type="text"
                 placeholder="Enter item name..."
@@ -76,9 +80,12 @@ const Header = ({ bgcol, txtcol }) => {
             </div>
           </div>
 
-          <div className="flex  space-x-12">
-            <img src={heart} className="w-7" alt="" />
-            <img src={shop} className="w-7" alt="" />
+          <div className="flex text-white  space-x-12">
+            <CiHeart />
+            <Link>
+              {" "}
+              <FaShoppingBag />{" "}
+            </Link>
           </div>
 
           <hr className="text-[#31525b] w-3" />

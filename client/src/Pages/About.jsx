@@ -5,12 +5,13 @@ import Footer from "../component/Footer/Footer";
 function About() {
   return (
     <div className="w-[100%] " id="landing">
-      <Header />
+      <Header backgroundColor="[rgba(255,255,255,0.1)]" />
+
       <div className="  text-sec2 px-[20%] text-center  flex justify-center flex-col gap-7 h-screen font-bold">
         <h1>ABOUT US</h1>
 
         <div
-          className="flex gap-7 text-left rounded-xl flex-col justify-center "
+          className="flex gap-7 text-left rounded-xl flex-col justify-center"
           style={{
             animation: "fadein 2s", // Animation
           }}
