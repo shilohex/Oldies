@@ -23,8 +23,14 @@ const Header = ({ bgcol, txtcol }) => {
         <div className="flex items-center justify-evenly py-5 px-8 border-b">
           <img src={logo} className="w-[7rem]" alt="" />
           <div className="abt">
-            <p>Contact</p>
-            <p>About</p>
+            <p className="dark:md:hover:text-pry">
+              {" "}
+              <Link>Contact</Link>
+            </p>
+            <p className="dark:md:hover:text-pry">
+              {" "}
+              <Link to={"/about"}>About</Link>
+            </p>
           </div>
 
           <div>

@@ -29,10 +29,12 @@ const Landingpage = () => {
         <div className="w-full h-full text-center absolute text-white justify-around items-center text-[2rem]  bg-[rgba(0,0,0,0.3)] top-0 flex ">
           <Link
             to={"/products/furnitures"}
-            className="w-1/5 flex flex-col items-center"
+            className="w-1/5 flex flex-col items-center "
           >
             <FaCouch />
-            <span className="hover:underline">Funitures</span>
+            <span className="hover:underline hover:ease-in-out duration-300">
+              Funitures
+            </span>
           </Link>
           <Link
             to={"/products/antiques"}

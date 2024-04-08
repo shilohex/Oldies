@@ -7,6 +7,7 @@ import VendorSignUp from "./Pages/vendor/signup/Signup";
 import Landingpage from "./Pages/landingpage/Landingpage";
 import VendorLogin from "./Pages/vendor/login/Login";
 import Products from "./Pages/Products";
+import About from "./Pages/About";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/products/:category" element={<Products />} />
         <Route path="/vendor/signup" element={<VendorSignUp />} />
         <Route path="/vendor/login" element={<VendorLogin />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );

@@ -16,10 +16,19 @@ const Footer = () => {
             commitment to sustainability and affordability, it's the perfect
             place to discover unique items while reducing your carbon footprint.
           </p>
-          <div className="w-[10rem]  flex gap-5 mt-5 items-center">
-            <CiFacebook />
-            <CiInstagram />
-            <CiTwitter />
+          <div className="text-[2rem] flex gap-5 mt-4 items-center">
+            <div className=" dark:md:hover:text-pry">
+              <CiFacebook />
+            </div>
+
+            <div className=" dark:md:hover:text-pry">
+              {" "}
+              <CiInstagram />
+            </div>
+            <div className=" dark:md:hover:text-pry">
+              {" "}
+              <CiTwitter />
+            </div>
           </div>
 
           <div>{/* for social media icons */}</div>
@@ -34,7 +43,10 @@ const Footer = () => {
               placeholder="Enter your email"
               className="p-3 rounded outline-pry"
             />
-            <button type="submit" className="bg-sec rounded-full w-2/5 py-2 ">
+            <button
+              type="submit"
+              className="bg-sec rounded-full w-2/5 py-2  dark:md:hover:bg-pry "
+            >
               Subscribe
             </button>
           </form>
