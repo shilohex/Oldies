@@ -4,9 +4,9 @@ import Footer from "../component/Footer/Footer";
 
 function About() {
   return (
-    <div className="w-[100%] " id='landing'>
-    <Header/>
-      <div className="bg-sec2   text-pry px-[20%] text-center  flex justify-center flex-col gap-7 h-screen">
+    <div className="w-[100%] " id="landing">
+      <Header />
+      <div className="  text-sec2 px-[20%] text-center  flex justify-center flex-col gap-7 h-screen font-bold">
         <h1>ABOUT US</h1>
 
         <div
@@ -15,7 +15,9 @@ function About() {
             animation: "fadein 2s", // Animation
           }}
         >
-          <h2 className="text-center">Oldies isn't your average second-hand platform.</h2>
+          <h2 className="text-center">
+            Oldies isn't your average second-hand platform.
+          </h2>
           <p>
             We're passionate about giving pre-loved items a second chance,
             connecting them with new owners who appreciate their unique stories.
@@ -61,7 +63,7 @@ function About() {
           </style>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
