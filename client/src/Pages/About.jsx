@@ -4,7 +4,7 @@ import Footer from "../component/Footer/Footer";
 
 function About() {
   return (
-    <>
+    <div className="w-[100%] " id='landing'>
     <Header/>
       <div className="bg-sec2   text-pry px-[20%] text-center  flex justify-center flex-col gap-7 h-screen">
         <h1>ABOUT US</h1>
@@ -62,7 +62,7 @@ function About() {
         </div>
       </div>
       <Footer/>
-    </>
+    </div>
   );
 }
 

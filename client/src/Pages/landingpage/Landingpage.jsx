@@ -29,7 +29,7 @@ const Landingpage = () => {
         <div className="w-full h-full text-center absolute text-white justify-around items-center text-[2rem]  bg-[rgba(0,0,0,0.3)] top-0 flex ">
           <Link
             to={"/products/furnitures"}
-            className="w-1/5 flex flex-col items-center "
+            className="w-[15%] flex flex-col items-center hover:text-[2.5rem]"
           >
             <FaCouch />
             <span className="hover:underline hover:ease-in-out duration-300">
@@ -38,7 +38,7 @@ const Landingpage = () => {
           </Link>
           <Link
             to={"/products/antiques"}
-            className="w-1/5 flex flex-col items-center"
+            className="w-[15%] flex flex-col items-center hover:text-[2.5rem]"
           >
             <LuLampCeiling />
             <span className="hover:underline">Antiques</span>
@@ -46,7 +46,7 @@ const Landingpage = () => {
 
           <Link
             to={"/products/thrift"}
-            className="w-1/5 flex flex-col items-center"
+            className="w-[15%] flex flex-col items-center hover:text-[2.5rem]"
           >
             <GiClothes />
             <span className="hover:underline">Thrift shops</span>
@@ -54,7 +54,7 @@ const Landingpage = () => {
 
           <Link
             to={"/products/electronics"}
-            className="w-1/5 flex flex-col items-center"
+            className="w-[15%] flex flex-col items-center hover:text-[2.5rem]"
           >
             <LuRefrigerator />
             <span className="hover:underline">Electronics</span>

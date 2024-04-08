@@ -8,7 +8,7 @@ import logo from "../../assets/oldieslogo.png";
 
 const Header = ({ bgcol, txtcol }) => {
   return (
-    <div>
+    <div className="fixed top-0 w-screen z-10 bg-[rgba(255,255,255,0.1)]">
       <div className="head ">
         <div id="comp" style={{ backgroundColor: bgcol, color: txtcol }}>
           <div className="nav ">
@@ -20,28 +20,21 @@ const Header = ({ bgcol, txtcol }) => {
           </div>
         </div>
 
-        <div className="flex items-center justify-evenly py-5 px-8 border-b">
+        <div className="flex items-center justify-evenly py-5 px-8 ">
           <img src={logo} className="w-[7rem]" alt="" />
-          <div className="abt">
-            <p className="dark:md:hover:text-pry">
-              {" "}
-              <Link>Contact</Link>
-            </p>
-            <p className="dark:md:hover:text-pry">
-              {" "}
-              <Link to={"/about"}>About</Link>
-            </p>
+          <div className="flex gap-8">
+              <Link className="hover:text-pry text-white" >Contact</Link>            
+              <Link className="hover:text-pry text-white" to={"/about"}>About</Link>
           </div>
 
           <div>
             <form
-              id="search"
-              className="flex gap-4 rounded-lg border focus-within:border-black focus-within:border-2 px-2 "
+              className="flex gap-4 rounded-lg border focus-within:border-pry focus-within:border-2 px-2  bg-white"
             >
               <input
                 type="text"
-                id="search-input"
                 placeholder="Enter item name..."
+                className="p-1 rounded-lg w-[200px] outline-none"
               />
               <button type="submit">
                 <img src={icon} className="w-5 cursor-pointer " alt="" />
@@ -88,7 +81,7 @@ const Header = ({ bgcol, txtcol }) => {
             <img src={shop} className="w-7" alt="" />
           </div>
 
-          <hr className="hr" />
+          <hr className="text-[#31525b] w-3" />
         </div>
       </div>
     </div>
