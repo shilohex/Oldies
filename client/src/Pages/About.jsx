@@ -5,7 +5,7 @@ import Footer from "../component/Footer/Footer";
 function About() {
   return (
     <div className="w-[100%] " id="landing">
-      <Header bgcol="rgba(255,255,255,0.1)" />
+      <Header />
 
       <div className="  text-sec2 px-[20%] text-center  flex justify-center flex-col gap-7 h-screen font-bold">
         <h1>ABOUT US</h1>
