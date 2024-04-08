@@ -1,24 +1,27 @@
 import React from "react";
+import Header from "../component/Header/Header";
+import Footer from "../component/Footer/Footer";
 
 function About() {
   return (
     <>
-      <div className="bg-sec2   text-pry p-[20px] text-center  flex justify-center flex-col gap-7">
+    <Header/>
+      <div className="bg-sec2   text-pry px-[20%] text-center  flex justify-center flex-col gap-7 h-screen">
         <h1>ABOUT US</h1>
 
         <div
-          className="flex gap-7 text-center rounded-xl flex-col justify-center "
+          className="flex gap-7 text-left rounded-xl flex-col justify-center "
           style={{
             animation: "fadein 2s", // Animation
           }}
         >
-          <h2>Oldies isn't your average second-hand platform.</h2>
+          <h2 className="text-center">Oldies isn't your average second-hand platform.</h2>
           <p>
             We're passionate about giving pre-loved items a second chance,
             connecting them with new owners who appreciate their unique stories.
           </p>
 
-          <div className="gap-7" style={{ textAlign: "center" }}>
+          <div className="gap-7">
             {" "}
             {/* Align bullet points to the left */}
             <p>
@@ -58,6 +61,7 @@ function About() {
           </style>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
