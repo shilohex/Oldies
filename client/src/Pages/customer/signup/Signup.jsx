@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import "./signup.css";
+import Footer from "../../../component/Footer/Footer";
+import Header from "../../../component/Header/Header";
 
 const Signup = () => {
   return (
     <>
+      <Header bgcol="rgba(0,0,0,0.3)" txtcol="#fff" />
       <div className="body ">
-        <div className="relative py-3 sm:max-w-xl sm:mx-auto">
+        <div className=" mt-20 relative py-3 sm:max-w-xl sm:mx-auto">
           <div className="relative px-4 py-10 bg-sec2 mx-8 md:mx-0 shadow-2xl  rounded-3xl sm:p-10">
             <div className="max-w-md mx-auto text-white">
               <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -211,6 +214,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
     // <div className="flex w-full justify-center items-center h-[100vh] text-center border">
     //   <div>

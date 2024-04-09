@@ -6,7 +6,7 @@ import { CiInstagram } from "react-icons/ci";
 
 const Footer = () => {
   return (
-    <div className="bg-sec2 px-20 pt-[5%] text-white">
+    <div className="bg-sec2 px-20 pt-[2%] text-white">
       <div className="flex justify-between mb-9">
         <div className="w-[30%]">
           <img src={logo} className="w-[10rem]" alt="" />

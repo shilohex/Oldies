@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./login.css";
+import Footer from "../../../component/Footer/Footer";
+import Header from "../../../component/Header/Header";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -27,7 +29,8 @@ const Login = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center h-screen">
+      <Header bgcol="rgba(0,0,0,0.3)" txtcol="#fff" />
+      <div className="flex mt-[100px] justify-center items-center h-screen">
         <form onSubmit={handleSubmit} action="" className="form_main">
           <p className="heading mt-0">Welcome Back!</p>
           <div className="inputContainer">
@@ -78,6 +81,7 @@ const Login = () => {
           </a>
         </form>
       </div>
+      <Footer />
     </>
   );
 };
