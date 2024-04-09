@@ -6,12 +6,15 @@ import logo from "../../assets/oldieslogo.png";
 import { CiHeart } from "react-icons/ci";
 import { FaShoppingBag } from "react-icons/fa";
 
-const Header = ({ bgcol= 'rgba(255,255,255,0.1)', txtcol = '#fff' }) => {
+const Header = ({ bgcol = "rgba(255,255,255,0.1)", txtcol = "#fff" }) => {
   return (
     <div className={`fixed top-0 w-screen z-10 bg-[${bgcol}] text-[${txtcol}]`}>
       <div className="head ">
-        <div id="comp" className="flex bg-sec2  p-2 mx-auto justify-center text-pry" >
-        {/* style={{ backgroundColor: bgcol, color: txtcol }} */}
+        <div
+          id="comp"
+          className="flex bg-sec2  p-2 mx-auto justify-center text-pry"
+        >
+          {/* style={{ backgroundColor: bgcol, color: txtcol }} */}
           <div className="nav w-[58%] flex justify-between  ">
             <p>Summer sales for all swim suit free express delivery</p>
             <p>Shop Now</p>
@@ -45,7 +48,7 @@ const Header = ({ bgcol= 'rgba(255,255,255,0.1)', txtcol = '#fff' }) => {
             </form>
           </div>
           <div className="group relative z-10">
-            <p className="bg-pry px-2 py-1 rounded">Sign up</p>
+            <p className="bg-pry px-2 py-1 rounded">Sign Up</p>
             <div className="hidden shadow-md rounded group-hover:flex bg-white absolute text-black top-full -left-1/2 flex-col gap-2 p-4">
               <Link
                 to={"/vendor/signup"}
