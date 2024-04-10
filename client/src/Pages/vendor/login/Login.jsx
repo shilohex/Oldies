@@ -27,7 +27,7 @@ const Login = () => {
       .catch((err) => console.log(err));
   }
   return (
-    <div className="bb">
+    <div className="bb bg-white">
       <Header bgcol="rgba(0,0,0,0.3)" txtcol="#fff" />
       <div className="flex justify-center mt-20 items-center h-screen">
         <form onSubmit={handleSubmit} action="" className="form_main">

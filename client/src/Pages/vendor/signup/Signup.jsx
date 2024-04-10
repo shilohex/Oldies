@@ -7,9 +7,9 @@ import Footer from "../../../component/Footer/Footer";
 const Signup = () => {
   return (
     <>
-      <div className="body ">
+      <div className="body mt-[13rem] bg-white">
         <Header txtcol="#fff" bgcol="rgba(0,0,0,0.3)" />
-        <div className=" mt-20 relative py-3 sm:max-w-xl sm:mx-auto">
+        <div className="  relative py-3 sm:max-w-xl sm:mx-auto">
           <div
             className="relative px-4 py-10 bg-sec2 mx-8 md:mx-0 shadow-2xl  rounded-3xl sm:p-10 "
             id="shadow"

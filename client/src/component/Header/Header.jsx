@@ -48,7 +48,7 @@ const Header = ({ bgcol = "rgba(255,255,255,0.1)", txtcol = "#fff" }) => {
             </form>
           </div>
           <div className="group relative z-10">
-            <p className="bg-pry px-2 py-1 rounded">Sign Up</p>
+            <p className="bg-pry px-2 py-1 border-pry rounded-xl">Sign Up</p>
             <div className="hidden shadow-md rounded group-hover:flex bg-white absolute text-black top-full -left-1/2 flex-col-reverse gap-2 p-4">
               <Link
                 to={"/vendor/signup"}
@@ -65,7 +65,7 @@ const Header = ({ bgcol = "rgba(255,255,255,0.1)", txtcol = "#fff" }) => {
             </div>
           </div>
           <div className="group relative z-10">
-            <p className="bg-pry px-2 py-1 rounded">Login</p>
+            <p className="bg-pry px-2 py-1 border-pry rounded-xl">Login</p>
             <div className="hidden shadow-md rounded group-hover:flex bg-white absolute text-black top-full -left-1/2 flex-col-reverse gap-2 p-4">
               <Link
                 to={"/vendor/login"}
@@ -84,7 +84,7 @@ const Header = ({ bgcol = "rgba(255,255,255,0.1)", txtcol = "#fff" }) => {
 
           <div className="flex text-white  space-x-12">
             <CiHeart />
-            <Link>
+            <Link to={"/checkout"}>
               {" "}
               <FaShoppingBag />{" "}
             </Link>

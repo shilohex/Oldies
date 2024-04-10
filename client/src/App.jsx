@@ -8,6 +8,7 @@ import Landingpage from "./Pages/landingpage/Landingpage";
 import VendorLogin from "./Pages/vendor/login/Login";
 import Products from "./Pages/Products";
 import About from "./Pages/About";
+import Checkout from "./Pages/Checkout/Checkout";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/vendor/signup" element={<VendorSignUp />} />
         <Route path="/vendor/login" element={<VendorLogin />} />
         <Route path="/about" element={<About />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </BrowserRouter>
   );

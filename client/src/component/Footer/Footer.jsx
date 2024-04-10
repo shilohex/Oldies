@@ -3,13 +3,16 @@ import logo from "../../assets/oldies3.png";
 import { CiFacebook } from "react-icons/ci";
 import { CiTwitter } from "react-icons/ci";
 import { CiInstagram } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div className="bg-sec2 px-20 pt-[2%] text-white">
       <div className="flex justify-between mb-9">
         <div className="w-[30%]">
-          <img src={logo} className="w-[10rem]" alt="" />
+          <Link to={"/"}>
+            <img src={logo} className="w-[10rem]" alt="" />
+          </Link>
           <p className="text-[1rem] font-medium">
             "Oldies" stands out as a premier second-hand selling platform,
             offering a treasure trove of vintage finds and modern gems. With a

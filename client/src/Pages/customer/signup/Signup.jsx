@@ -8,8 +8,8 @@ const Signup = () => {
   return (
     <>
       <Header bgcol="rgba(0,0,0,0.3)" txtcol="#fff" />
-      <div className="body ">
-        <div className=" mt-20 relative py-3 sm:max-w-xl sm:mx-auto">
+      <div className="body mt-[15rem] bg-white">
+        <div className="  relative py-3 sm:max-w-xl sm:mx-auto">
           <div className="relative px-4 py-10 bg-sec2 mx-8 md:mx-0 shadow-2xl  rounded-3xl sm:p-10">
             <div className="max-w-md mx-auto text-white">
               <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
