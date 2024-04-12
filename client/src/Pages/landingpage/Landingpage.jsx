@@ -12,6 +12,7 @@ import { FaCouch } from "react-icons/fa";
 import { GiClothes } from "react-icons/gi";
 import { LuRefrigerator } from "react-icons/lu";
 import { LuLampCeiling } from "react-icons/lu";
+import Carousel from "../../component/carousel";
 
 const Landingpage = () => {
   useEffect(() => {
@@ -19,13 +20,25 @@ const Landingpage = () => {
       .then((response) => response.json())
       .then((responseObject) => console.log(responseObject));
   }, []);
-
+  const slides = [
+    "https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg",
+    "https://www.sunset.com/wp-content/uploads/thrift-store-getty-0220-1-1200x900.jpg",
+    "https://i.insider.com/59976ba64dcf3532008b49d7?width=700",
+    "https://kiwanissale.com/wp-content/uploads/2020/02/IMG_0697.jpg",
+    "https://www.avintagesplendor.com/wp-content/uploads/2022/09/best-thrift-stores-in-la-scaled.jpg",
+    "https://cdn.shopify.com/s/files/1/0269/9644/1191/files/Secondhand_Shopping_2048x2048.jpg?v=1628535295",
+  ];
   return (
     <div className="w-[100%] " id="landing">
       <Header />
       {/* <p className="border p-10">i mutds</p> */}
       <div className="flex  w-full h-screen relative">
-        <img className="w-full  m-0 p-0 flex" src={tops} alt="" />
+        {/* <img className="w-full  m-0 p-0 flex" src={tops} alt="" /> */}
+        <Carousel autoslide={true} autoslideinterval={1000}>
+          {slides.map((s) => (
+            <img src={s} />
+          ))}
+        </Carousel>
         <div className="w-full h-full text-center absolute text-white justify-around items-center text-[2rem]  bg-[rgba(0,0,0,0.3)] top-0 flex ">
           <Link
             to={"/products/furnitures"}
