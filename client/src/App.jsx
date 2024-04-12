@@ -6,7 +6,7 @@ import Login from "./Pages/customer/login/Login";
 import VendorSignUp from "./Pages/vendor/signup/Signup";
 import Landingpage from "./Pages/landingpage/Landingpage";
 import VendorLogin from "./Pages/vendor/login/Login";
-import Product from "./product.js";
+import Product from "./component/products.jsx";
 import About from "./Pages/About";
 import Checkout from "./Pages/Checkout/Checkout";
 import Carousel from "./component/carousel.jsx";
