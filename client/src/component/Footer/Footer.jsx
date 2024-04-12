@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="py-6 border-t text-center">
-        <p>@ Copyright 2024, All Rights Reserved by Oldies</p>
+        <p>@ Copyright 2024 All Rights Reserved by Oldies</p>
       </div>
     </div>
   );
