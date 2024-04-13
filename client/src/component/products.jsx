@@ -3,6 +3,8 @@ import { useState } from "react";
 import Filter from "./Filter.jsx";
 import Productlist from "./Productlist.jsx";
 import products from "../product.js";
+import Footer from "./Footer/Footer.jsx";
+import Header from "./Header/Header.jsx";
 
 function Products() {
   const [product, setProduct] = useState(products);
@@ -28,8 +30,11 @@ function Products() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">PRODUCTS</h1>
-      <div>
+      {/* <Header /> */}
+      <h1 className="text-3xl font-bold underline mt-50 p-10 flex justify-center text-center">
+        PRODUCTS
+      </h1>
+      <div className="flex justify-center text-center mb-9">
         <input
           type="text"
           placeholder="Filter by title"
@@ -42,13 +47,13 @@ function Products() {
           value={filterByPrice}
           onChange={(e) => setfilterByPrice(e.target.value)}
         />
-       
       </div>
       {filterByPrice || filterByTitle ? (
         <Filter list={product} price={filterByPrice} title={filterByTitle} />
       ) : (
         <Productlist list={product} />
       )}
+      <Footer />
     </>
   );
 }

@@ -28,9 +28,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <main className="App">
-        <div className="max-w-lg"></div>
-      </main>
+      <main className="App"></main>
     </>
   );
 }

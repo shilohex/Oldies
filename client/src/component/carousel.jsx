@@ -7,7 +7,7 @@ export default function Carousel({
   autoslideinterval = 3000,
 }) {
   const [curr, setCurr] = useState(0);
-  document.title = curr
+  document.title = curr;
 
   const prev = () =>
     setCurr((curr) => (curr == 0 ? slides.length - 1 : curr - 1));
@@ -23,13 +23,13 @@ export default function Carousel({
   return (
     <div className="overflow-hidden realtive">
       <div
-        className="flex transition-transform ease-out duration-500 "
+        className="flex transition-transform ease-in duration-500 "
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {slides}
       </div>
       <div className="absolute bottom-4 right-0 left-0">
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-2 w-full  m-0 p-0 ">
           {slides.map((_, i) => (
             <div
               className={`transition-all w-3 h-3 bg-white rounded-full ${

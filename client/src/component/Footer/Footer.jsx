@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-sec2 px-20 pt-[2%] text-white">
+    <div className="bg-sec2 px-20 pt-[2%] text-[#f3f3f3]">
       <div className="flex justify-between mb-9">
         <div className="w-[30%]">
           <Link to={"/"}>
@@ -36,8 +36,8 @@ const Footer = () => {
 
           <div>{/* for social media icons */}</div>
         </div>
-        <div className="w-[30%]">
-          <p className=" uppercase text-[0.75rem] mb-6">
+        <div className="w-[30%] ">
+          <p className=" uppercase text-[0.75rem] mb-6 ">
             subscribe to our newsletter
           </p>
           <form className="flex flex-col gap-4 text-black">
@@ -55,7 +55,7 @@ const Footer = () => {
           </form>
         </div>
       </div>
-      <div className="py-6 border-t text-center">
+      <div className="py-6 border-t text-center text-[#f3f3f3]">
         <p>@ Copyright 2024 All Rights Reserved by Oldies</p>
       </div>
     </div>

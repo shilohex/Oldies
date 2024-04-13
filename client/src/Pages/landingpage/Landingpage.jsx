@@ -22,11 +22,10 @@ const Landingpage = () => {
   }, []);
   const slides = [
     "https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg",
-    "https://www.sunset.com/wp-content/uploads/thrift-store-getty-0220-1-1200x900.jpg",
-    "https://i.insider.com/59976ba64dcf3532008b49d7",
-    "https://kiwanissale.com/wp-content/uploads/2020/02/IMG_0697.jpg",
+    "https://q-furniture.com/wp-content/uploads/2023/06/used-furniture-stores-07-scaled.jpg",
     "https://www.avintagesplendor.com/wp-content/uploads/2022/09/best-thrift-stores-in-la-scaled.jpg",
-    "https://cdn.shopify.com/s/files/1/0269/9644/1191/files/Secondhand_Shopping_2048x2048.jpg?v=1628535295",
+    "https://images.squarespace-cdn.com/content/v1/5511f9bee4b068878ae651fb/1530653308676-KRW7ALWO6UF7V6DGXXQ9/image-asset.jpeg",
+    "https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg",
   ];
   return (
     <div className="w-[100%] " id="landing">
@@ -34,12 +33,15 @@ const Landingpage = () => {
       {/* <p className="border p-10">i mutds</p> */}
       <div className="flex  w-full h-screen relative">
         {/* <img className="w-full  m-0 p-0 flex" src={tops} alt="" /> */}
-        <Carousel autoslide={true} autoslideinterval={1000}>
-          {slides.map((s) => (
-            <img src={s} className="w-screen" />
-          ))}
-        </Carousel>
-        <div className="w-full h-full text-center absolute text-white justify-around items-center text-[2rem]  bg-[rgba(0,0,0,0.3)] top-0 flex ">
+        <div className="w-full  m-0 p-0 flex h-auto ">
+          <Carousel autoslide={true} autoslideinterval={3000}>
+            {slides.map((s) => (
+              <img src={s} className="w-screen h-full " />
+            ))}
+          </Carousel>
+        </div>
+
+        <div className="w-full h-full text-center absolute text-[#f3f3f3] justify-around items-center text-[2rem]  bg-[rgba(0,0,0,0.3)] top-0 flex ">
           <Link
             to={"/products/furnitures"}
             className="w-[15%] flex flex-col items-center hover:text-[2.5rem]"

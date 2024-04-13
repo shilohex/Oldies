@@ -6,7 +6,7 @@ import logo from "../../assets/oldieslogo.png";
 import { CiHeart } from "react-icons/ci";
 import { FaShoppingBag } from "react-icons/fa";
 
-const Header = ({ bgcol = "rgba(255,255,255,0.1)", txtcol = "#fff" }) => {
+const Header = ({ bgcol = "rgba(0,0,0,0.3)", txtcol = "#000" }) => {
   return (
     <div className={`fixed top-0 w-screen z-10 bg-[${bgcol}] text-[${txtcol}]`}>
       <div className="head ">
@@ -16,11 +16,10 @@ const Header = ({ bgcol = "rgba(255,255,255,0.1)", txtcol = "#fff" }) => {
         >
           {/* style={{ backgroundColor: bgcol, color: txtcol }} */}
           <div className="nav w-[58%] flex justify-between  ">
-            <p>Summer sales for all swim suit free express delivery</p>
-            <p>Shop Now</p>
-            <div>
-              <p>English{">"} </p>
-            </div>
+            <p className=" hover:text-[#f3f3f3]">
+              50% OFF EVERY SHOES AND BOOTS
+            </p>
+            <p className=" hover:text-[#f3f3f3]">SHOP NOW </p>
           </div>
         </div>
 
@@ -28,7 +27,7 @@ const Header = ({ bgcol = "rgba(255,255,255,0.1)", txtcol = "#fff" }) => {
           <Link to={"/"}>
             <img src={logo} className="w-[7rem]" alt="" />
           </Link>
-          <div className="flex gap-8">
+          <div className="flex gap-8 text-white">
             <Link className="hover:text-pry ">Contact</Link>
             <Link className="hover:text-pry" to={"/about"}>
               About
@@ -49,7 +48,7 @@ const Header = ({ bgcol = "rgba(255,255,255,0.1)", txtcol = "#fff" }) => {
           </div>
           <div className="group relative z-10">
             <p className="bg-pry px-2 py-1 border-pry rounded-xl">Sign Up</p>
-            <div className="hidden shadow-md rounded group-hover:flex bg-white absolute text-black top-full -left-1/2 flex-col-reverse gap-2 p-4">
+            <div className="hidden shadow-md rounded group-hover:flex bg-[#f3f3f3] absolute text-black top-full -left-1/2 flex-col-reverse gap-2 p-4">
               <Link
                 to={"/vendor/signup"}
                 className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm"
@@ -66,7 +65,7 @@ const Header = ({ bgcol = "rgba(255,255,255,0.1)", txtcol = "#fff" }) => {
           </div>
           <div className="group relative z-10">
             <p className="bg-pry px-2 py-1 border-pry rounded-xl">Login</p>
-            <div className="hidden shadow-md rounded group-hover:flex bg-white absolute text-black top-full -left-1/2 flex-col-reverse gap-2 p-4">
+            <div className="hidden shadow-md rounded group-hover:flex bg-[#f3f3f3] absolute text-black top-full -left-1/2 flex-col-reverse gap-2 p-4">
               <Link
                 to={"/vendor/login"}
                 className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm"
@@ -82,9 +81,8 @@ const Header = ({ bgcol = "rgba(255,255,255,0.1)", txtcol = "#fff" }) => {
             </div>
           </div>
 
-          <div className="flex text-white  space-x-12">
-            <CiHeart />
-            <Link to={"/checkout"}>
+          <div className="flex text-[#f3f3f3]  space-x-12 hover:ease-in-out duration-300">
+            <Link className="hover:text-[2.5rem" to={"/checkout"}>
               {" "}
               <FaShoppingBag />{" "}
             </Link>
