@@ -68,28 +68,28 @@ const Product = [
     description:
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
-    url: "https://cdn.wisemove.ae/image/blog/89cec6de2f379e8de8ca097f486405ca.jpeg",
+    url: "https://kiwanissale.com/wp-content/uploads/2020/02/IMG_0701.jpg",
   },
   {
     title: "Vintage Finds Emporium",
     description:
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
-    url: "https://cdn.wisemove.ae/image/blog/89cec6de2f379e8de8ca097f486405ca.jpeg",
+    url: "https://images.squarespace-cdn.com/content/v1/5aaaba7b89c172e7df11e443/1676420851590-5AM41FU50MA9NDHABBI7/thrift+store+speakers.jpg",
   },
   {
     title: "Vintage Finds Emporium",
     description:
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
-    url: "https://cdn.wisemove.ae/image/blog/89cec6de2f379e8de8ca097f486405ca.jpeg",
+    url: "https://lh3.googleusercontent.com/proxy/6SJEegockxg8DuNUX0wFZBPm5Xni8kpDleR-6BgF-znQkjWeDa7RhiugKA3ogGsM8q_HnL79EDZsYOCTqUl4EXwJPnNTsd4R2vBdS7XW8GbQFi8ziaShmr4swT_9aT5boumTikZ28Vxg",
   },
   {
     title: "Vintage Finds Emporium",
     description:
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
-    url: "https://cdn.wisemove.ae/image/blog/89cec6de2f379e8de8ca097f486405ca.jpeg",
+    url: "https://images.squarespace-cdn.com/content/v1/5e710eb4047e71337122ffc3/1701739650008-8FLMGV3B7V6IF9LB5EOF/IMG_2271+right+cr.jpg?format=2500w",
   },
 ];
 export default Product;
