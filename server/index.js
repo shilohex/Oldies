@@ -4,85 +4,9 @@ const connectdb = require("./db");
 const dotenv = require("dotenv");
 const app = express();
 const port = 5001;
-const User = require("./models/userModel");
-
-const countries = [
-  {
-    name: "India",
-    capital: "New Delhi",
-    population: 1350000000,
-  },
-  {
-    name: "China",
-    capital: "Beijing",
-    population: 1350000000,
-  },
-  {
-    name: "USA",
-    capital: "Washington",
-    population: 1350000000,
-  },
-  {
-    name: "Japan",
-    capital: "Tokyo",
-    population: 1350000000,
-  },
-  {
-    name: "Russia",
-    capital: "Moscow",
-    population: 1350000000,
-  },
-];
+const userRoutes = require("./routes/userRoutes");
 dotenv.config();
 connectdb();
-const users = [
-  {
-    Username: "teslim",
-    password: "hjujksikl",
-    email: "teslim@gmail.com",
-    gender: "male",
-    country: "india",
-  },
-  {
-    Username: "shilo",
-    password: "ujkeilsi347",
-    email: "shilo@gmail.com",
-    gender: "male",
-    country: "china",
-  },
-
-  {
-    Username: "muyi",
-    password: "gtredchmkj456",
-    email: "muyi@gmail.com",
-    gender: "male",
-    country: "usa",
-  },
-];
-
-app.post("login", (req, res) => {
-  const { Username, password } = req.body;
-  const user = users.find(
-    (user) => user.name === Username && user.password === password
-  );
-
-  if (user) {
-    res.send(user);
-  } else {
-    res.status(401).send({ message: "Invalid Username and Password" });
-  }
-});
-
-app.get("/addUser", (req, res) => {
-  const newuser = new User({
-    username: "tessy",
-    password: "tessy",
-    email: "tessy",
-    address: "123 Bentevi avenue",
-  });
-  const addedUser = newuser.save();
-  res.send(addedUser);
-});
 
 app.use(
   cors({
@@ -91,27 +15,8 @@ app.use(
 );
 app.use(express.json());
 
-app.post("/login", (req, res) => {
-  console.log("i got you");
-  const { Username, password } = req.body;
-  const user = users.find(
-    (user) => user.name === Username && user.password === password
-  );
-  if (user) {
-    res.send(user);
-  } else {
-    res.status(401).send({ message: "Invalid Username and Password" });
-  }
-});
+app.use("/user", userRoutes);
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
-// var http = require("http");
-
-// http
-//   .createServer(function (req, res) {
-//     res.end("Hello world\n");
-//   })
-//   .listen(8081);
-// console.log("Server listening on port 8081");

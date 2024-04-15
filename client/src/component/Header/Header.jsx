@@ -19,7 +19,9 @@ const Header = ({ bgcol = "rgba(0,0,0,0.3)", txtcol = "#000" }) => {
             <p className=" hover:text-[#f3f3f3]">
               50% OFF EVERY SHOES AND BOOTS
             </p>
-            <p className=" hover:text-[#f3f3f3]">SHOP NOW </p>
+            <Link to={"/products/:category"}>
+              <p className=" hover:text-[#f3f3f3]">SHOP NOW </p>
+            </Link>
           </div>
         </div>
 

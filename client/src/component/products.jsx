@@ -9,7 +9,7 @@ import Header from "./Header/Header.jsx";
 function Products() {
   const [product, setProduct] = useState(products);
   const [filterByTitle, SetfilterByTitle] = useState("");
-  const [filterByPrice, setfilterByPrice] = useState(Number);
+  const [filterByPrice, setfilterByPrice] = useState();
   const [newProduct, setnewProduct] = useState({
     title: "",
     description: "",
@@ -30,11 +30,11 @@ function Products() {
 
   return (
     <>
-      {/* <Header /> */}
-      <h1 className="text-3xl font-bold underline mt-50 p-10 flex justify-center text-center">
+      <Header />
+      {/* <h1 className="text-3xl font-bold underline mt-50 p-10 flex justify-center text-center">
         PRODUCTS
-      </h1>
-      <div className="flex justify-center text-center mb-9">
+      </h1> */}
+      <div className="flex justify-center text-center mb-9 mt-[220px] gap-5  focus:ring-pry">
         <input
           type="text"
           placeholder="Filter by title"
