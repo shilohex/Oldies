@@ -23,7 +23,7 @@ export default function Carousel({
   return (
     <div className="overflow-hidden realtive">
       <div
-        className="flex transition-transform ease-in duration-500 "
+        className="flex transition-transform ease-in duration-700 "
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {slides}

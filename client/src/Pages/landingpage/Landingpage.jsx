@@ -22,21 +22,21 @@ const Landingpage = () => {
   }, []);
   const slides = [
     "https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg",
-    "https://q-furniture.com/wp-content/uploads/2023/06/used-furniture-stores-07-scaled.jpg",
-    "https://images.squarespace-cdn.com/content/v1/5726544ef85082b93e0f14c1/1667833872825-1K3LRTE05458F1UL9U9W/Long+Island+Furniture+Thrift+Stores.jpg?format=2500w",
+    // "https://q-furniture.com/wp-content/uploads/2023/06/used-furniture-stores-07-scaled.jpg",
+    // "https://images.squarespace-cdn.com/content/v1/5726544ef85082b93e0f14c1/1667833872825-1K3LRTE05458F1UL9U9W/Long+Island+Furniture+Thrift+Stores.jpg?format=2500w",
     "https://www.avintagesplendor.com/wp-content/uploads/2022/09/best-thrift-stores-in-la-scaled.jpg",
     "https://images.squarespace-cdn.com/content/v1/5511f9bee4b068878ae651fb/1530653308676-KRW7ALWO6UF7V6DGXXQ9/image-asset.jpeg",
-    // "https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg",
+    "https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg",
   ];
   return (
     <>
       <div className="w-[100%] " id="landing">
         <Header />
         {/* <p className="border p-10">i mutds</p> */}
-        <div className="flex  w-full h-screen relative">
+        <div className="flex  w-full h-auto object-cover relative">
           {/* <img className="w-full  m-0 p-0 flex" src={tops} alt="" /> */}
           <div className="w-full  m-0 p-0 flex h-auto ">
-            <Carousel autoslide={true} autoslideinterval={4000}>
+            <Carousel autoslide={true} autoslideinterval={7000}>
               {slides.map((s) => (
                 <img src={s} className="w-screen h-full " />
               ))}
