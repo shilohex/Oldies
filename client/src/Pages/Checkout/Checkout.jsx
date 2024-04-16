@@ -3,36 +3,110 @@ import "./Checkout.css";
 import Header from "../../component/Header/Header";
 import Footer from "../../component/Footer/Footer";
 import logo from "../../assets/oldieslogo.png";
+// import checkout from "../Checkout/checkout";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import checkout from "../";
 
-function checkout() {
+function Checkout() {
+  const [cartItems, setCartItems] = useState([
+    { id: 1, name: "Product 1", price: 50, quantity: 1 },
+    { id: 2, name: "Product 2", price: 35, quantity: 1 },
+  ]);
+
+  const subtotal = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+
+  const renderCartItems = () => {
+    return cartItems.map((item) => (
+      <div
+        key={item.id}
+        className="flex items-center justify-between py-2 border-b border-gray-300"
+      >
+        <div className="flex items-center space-x-4">
+          <img
+            src={item.image}
+            alt={item.name}
+            className="w-16 h-16 object-cover"
+          />
+          <div>
+            <p className="text-lg">{item.name}</p>
+            <p className="text-gray-600">${item.price}</p>
+          </div>
+        </div>
+        <div className="flex items-center space-x-4">
+          <button
+            onClick={() => handleDecrement(item.id)}
+            className="text-gray-500 hover:text-gray-700"
+          >
+            -
+          </button>
+          <span>{item.quantity}</span>
+          <button
+            onClick={() => handleIncrement(item.id)}
+            className="text-gray-500 hover:text-gray-700"
+          >
+            +
+          </button>
+          <p className="text-gray-600">${item.price * item.quantity}</p>
+        </div>
+      </div>
+    ));
+  };
+
+  const handleIncrement = (itemId) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const handleDecrement = (itemId) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
+  };
+
+  const handleCheckout = () => {
+    // Handle checkout logic
+  };
+
   return (
     <div>
+      {/* Header */}
       <div className="main">
         <Link to={"/"}>
-          {" "}
           <img src={logo} className="w-[6rem]" alt="" />
         </Link>
-
-        <div id="text2" className="dark:md:hover:text-pry">
+        <div
+          id="text2"
+          className="dark:md:hover:text-pry flex justify-center text-center"
+        >
           <Link to={"/signup"}>
             <p> Sign Up</p>
           </Link>
         </div>
       </div>
 
-      <section className="box">
+      {/* Cart Summary */}
+      <section className="box ">
         <div id="innertxt">
           <p>Home</p>
           <p>{">"}</p>
           <div id="cart1">
             <p>Cart</p>
-            <span id="Cart">2</span>
+            <span id="Cart">{cartItems.length}</span>
           </div>
         </div>
       </section>
 
+      {/* Product Details */}
       <section>
         <div className="text">
           <p>Product</p>
@@ -44,147 +118,32 @@ function checkout() {
         </div>
       </section>
 
-      <section>
-        <div className="line">
-          <hr classNamen="edit" />
-        </div>
-      </section>
+      {/* Cart Items */}
+      {renderCartItems()}
 
-      <section>
-        <div className="case1">
-          <div className="case11">
-            <img src="./res/phonecase3.jpg" alt="" />
-            <p>Tom and Jerry weird cover</p>
-
-            <div class="like">
-              <img className="heart" src="./res/heart-regular.svg" alt="" />
-            </div>
-          </div>
-
-          <div className="case12">
-            <p>
-              <span className="price"> 50 </span>
-            </p>
-
-            <div>
-              <button type="submit" class="inc">
-                +
-              </button>
-              <span className="qty">1</span>
-              <button type="submit" class="dec">
-                -
-              </button>
-            </div>
-            <p>
-              $<span className="total">50</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="line2">
-          <hr className="edit2" />
-        </div>
-      </section>
-
-      <section>
-        <div className="case1">
-          <div className="case11">
-            <img src="./res/tomandjerry2.jpg" alt="" />
-            <p>Tom and Jerry run case</p>
-            <div className="like">
-              <img className="heart" src="./res/heart-regular.svg" alt="" />
-            </div>
-          </div>
-
-          <div className="case12">
-            <p>
-              <span className="price"> 35 </span>
-            </p>
-
-            <div>
-              <button type="submit" className="inc">
-                +
-              </button>
-              <span id="qty1" className="qty">
-                1
-              </span>
-              <button type="submit" className="dec">
-                -
-              </button>
-            </div>
-            <p id="total1">
-              $<span className="total">35</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="line2">
-          <hr className="edit2" />
-        </div>
-      </section>
-
+      {/* Subtotal */}
       <section>
         <div className="subtotal">
           <div>
             <p>Subtotal</p>
           </div>
           <div>
-            <p className="subtotal-value" id="subtotal">
-              $85
-            </p>
+            <p className="subtotal-value">${subtotal}</p>
           </div>
         </div>
 
-        <div className="subtotal2">
-          <div>
-            <p>Shipping</p>
-          </div>
-          <div>
-            <p className="subtotal-value">
-              $<span id="shipping">10</span>
-            </p>
-          </div>
-        </div>
-
-        <div className="subtotal3">
-          <div>
-            <p>Tax</p>
-          </div>
-          <div>
-            <p className="subtotal-value" id="tax">
-              $5
-            </p>
-          </div>
-        </div>
-
-        <div className="parant">
-          <div className="lastsub">
-            <div>
-              <p>Total</p>
-            </div>
-            <div>
-              <p className="subtotal-value" id="total">
-                $100
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
+        {/* Checkout Button */}
         <div className="checkout">
           <div>
-            <p>CHECKOUT</p>
+            <button onClick={handleCheckout}>CHECKOUT</button>
           </div>
         </div>
       </section>
+
+      {/* Footer */}
       <Footer />
     </div>
   );
 }
 
-export default checkout;
+export default Checkout;

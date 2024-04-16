@@ -3,8 +3,13 @@ const User = require("../models/userModel");
 const registerUser = async (req, res) => {
   const { email, password, fullName, username } = req.body;
 
+  if (!email || !password || !fullName || !username) {
+    return res.status(400).json({ error: "All fields are required" });
+  }
+
   try {
     const existingUser = await User.findOne({ email });
+    // console.log(User);
 
     if (existingUser) {
       return res.status(401).json({ error: "Email already in use" });
@@ -18,6 +23,7 @@ const registerUser = async (req, res) => {
     });
 
     if (newUser) {
+      console.log(newUser);
       return res.status(201).json({ message: "User successfully created" });
     }
   } catch (error) {
@@ -26,56 +32,23 @@ const registerUser = async (req, res) => {
   }
 };
 
-// const bcrypt = require("bcrypt");
-
 const authUser = async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-    const user = await User.findOne({ email });
-
-    if (!user) {
-      return res.status(401).json({ error: "Invalid credentials" });
-    }
-
-    const passwordMatch = await bcrypt.compare(password, user.password);
-
-    if (!passwordMatch) {
-      return res.status(401).json({ error: "Invalid credentials" });
-    }
-
-    // Here, you might generate a token for authentication
-
-    res.json({ user, token: "your_generated_token" });
-  } catch (error) {
-    console.error("Authentication error:", error);
-    res.status(500).json({ error: "Internal server error" });
+  const { username, password } = req.body;
+  if (!username || !password) {
+    return res.status(400).send({ error: "All fields are required" });
   }
+  const user = await User.findOne({ username });
+  if (!user) {
+    return res.status(401).send({ error: "Invalid username" });
+  }
+
+  const isMatch = await user.matchPassword(password);
+  if (!isMatch) {
+    return res.status(401).send({ error: "Invalid password" });
+  }
+  res
+    .status(200)
+    .send({ message: "User authenticated sucessfully", user: user });
 };
-// const registerUser = async (req, res) => {
-//   const { username, password, email, phoneNumber, address } = req.body;
-//   const newUser = new User({
-//     username: username,
-//     password: password,
-//     email: email,
-//     phoneNumber: phoneNumber,
-//     address: address,
-//   });
-
-//   const user = await newUser.save();
-//   res.send(user);
-// };
-
-// const authUser = async (req, res) => {
-//   const { username, password } = req.body;
-//   console.log(req.body);
-//   const newUser = new User({
-//     username: username,
-//     password: password,
-//   });
-
-//   const user = await newUser.save();
-//   res.send(user);
-// };
 
 module.exports = { registerUser, authUser };

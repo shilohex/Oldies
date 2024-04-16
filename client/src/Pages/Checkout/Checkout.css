@@ -2,8 +2,9 @@
   padding: 0;
   margin: 0;
 }
+
 * {
-  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -134,12 +135,11 @@
 }
 
 /* heart design */
-/* .case11 div{
-    font-size: 30px;
-    width: 50px;
-    padding-left: 20px;
-      
-} */
+.case11 div {
+  font-size: 30px;
+  width: 50px;
+  padding-left: 20px;
+}
 .like img {
   width: 50%;
 }
