@@ -1,4 +1,5 @@
 const User = require("../models/userModel");
+const { generateToken } = require("../utils/generateToken");
 
 const registerUser = async (req, res) => {
   const { email, password, fullName, username } = req.body;
@@ -46,9 +47,14 @@ const authUser = async (req, res) => {
   if (!isMatch) {
     return res.status(401).send({ error: "Invalid password" });
   }
-  res
-    .status(200)
-    .send({ message: "User authenticated sucessfully", user: user });
+  res.status(200).send({
+    message: "User authenticated sucessfully",
+    token: generateToken({
+      id: user._id,
+      email: user.email,
+      username: user.username,
+    }),
+  });
 };
 
 module.exports = { registerUser, authUser };

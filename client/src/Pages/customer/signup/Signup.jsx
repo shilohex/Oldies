@@ -1,17 +1,45 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import "./signup.css";
 import Footer from "../../../component/Footer/Footer";
 import Header from "../../../component/Header/Header";
+import api from "../../../utils/api";
 
 const Signup = () => {
+  const [formData, setFormdata] = useState({
+    fullName: "",
+    email: "",
+    username: "",
+    password: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const response = await api.post("user", formData);
+      console.log(response);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setErrors(error.response.data.error);
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <Header bgcol="rgba(0,0,0,0.3)" txtcol="#fff" />
       <div className="body mt-[15rem] bg-white">
         <div className="  relative py-3 sm:max-w-xl sm:mx-auto">
           <div className="relative px-4 py-10 bg-sec2 mx-8 md:mx-0 shadow-2xl  rounded-3xl sm:p-10">
-            <div className="max-w-md mx-auto text-white">
+            <form
+              onSubmit={handleSubmit}
+              className="max-w-md mx-auto text-white"
+            >
               <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label
@@ -24,6 +52,11 @@ const Signup = () => {
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="text"
                     id="fullname"
+                    value={formData.fullName}
+                    onChange={(e) =>
+                      setFormdata({ ...formData, fullName: e.target.value })
+                    }
+                    required
                   />
                 </div>
                 <div>
@@ -37,6 +70,11 @@ const Signup = () => {
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="email"
                     id="email"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormdata({ ...formData, email: e.target.value })
+                    }
+                    required
                   />
                 </div>
                 <div>
@@ -50,6 +88,11 @@ const Signup = () => {
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="text"
                     id="username"
+                    value={formData.username}
+                    onChange={(e) =>
+                      setFormdata({ ...formData, username: e.target.value })
+                    }
+                    required
                   />
                 </div>
                 <div>
@@ -63,6 +106,11 @@ const Signup = () => {
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="password"
                     id="password"
+                    value={formData.password}
+                    onChange={(e) =>
+                      setFormdata({ ...formData, password: e.target.value })
+                    }
+                    required
                   />
                 </div>
               </div>
@@ -193,8 +241,9 @@ const Signup = () => {
               </div>
               <div class="mt-5">
                 <button
-                  className="py-2 px-4 bg-white hover:bg-pry focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                  className="py-2 px-4 bg-white hover:bg-pry focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg  disabled:bg-[grey] "
                   type="submit"
+                  disabled={loading}
                 >
                   Sign up
                 </button>
@@ -210,29 +259,14 @@ const Signup = () => {
 
                 <span className="w-1/5 border-b dark:border-pry md:w-1/4"></span>
               </div>
-            </div>
+            </form>
+            <p className="text-red-500"> {errors && errors}</p>
           </div>
         </div>
       </div>
+
       <Footer />
     </>
-    // <div className="flex w-full justify-center items-center h-[100vh] text-center border">
-    //   <div>
-    //     {" "}
-    //     <img src={logo} className=" w-20 mx-auto border" alt="" />
-    //     <div className=" ">
-    //       <h1>Welcome to Oldies</h1>
-    //       <p>
-    //         Type your e-mail or phone number to log in or create a Oldies
-    //         account.
-    //       </p>
-    //     </div>
-    //     <div>
-    //       <TxtInput labeltxt="Username" />
-    //       <TxtInput labeltxt="Password" inptype="password" />
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 

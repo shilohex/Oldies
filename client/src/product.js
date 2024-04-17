@@ -5,14 +5,17 @@ const Product = [
       "Offering stylish and affordable secondhand furniture that adds a touch of elegance to any home decor. ",
     price: 210.0,
     url: "https://www.sunset.com/wp-content/uploads/thrift-store-getty-0220-1-1200x900.jpg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
-
   {
     title: "Upcycled Treasures",
     description:
       "Discover creatively repurposed furniture items that breathe new life into forgotten pieces, promoting sustainability and style. ",
     price: 310.0,
     url: "https://i.insider.com/59976ba64dcf3532008b49d7?width=700 ",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -20,6 +23,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://nickiandkaren.com/wp-content/uploads/2021/05/reiseuhu-Qf9JuyTYl8E-unsplash-1024x998.jpg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -27,6 +32,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://www.forrent.com/blog/wp-content/uploads/2018/03/vegas-thrift-stores-Gypsy-Bazaar-DSC06979.jpg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -34,6 +41,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://imgsvr2.904happyhour.com/article-images/5f4e5373d1067_hMIVdVNwiwKuxZkrxLIQujEIN.jpg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -41,6 +50,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://www.longisland.com/site_media/images/article/subarticle_image/thrift_shutterstock_203296009.jpg.644x0_q85.jpg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -48,6 +59,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://i.insider.com/5ffdce2fc8408b0019bd4149?width=700",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -55,6 +68,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://media.newyorker.com/photos/5f88e07c2b040487c6804871/master/pass/ChackKing-CoolGirlThrift.jpg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -62,6 +77,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://cdn.wisemove.ae/image/blog/89cec6de2f379e8de8ca097f486405ca.jpeg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -69,6 +86,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://kiwanissale.com/wp-content/uploads/2020/02/IMG_0701.jpg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -76,6 +95,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://images.squarespace-cdn.com/content/v1/5aaaba7b89c172e7df11e443/1676420851590-5AM41FU50MA9NDHABBI7/thrift+store+speakers.jpg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -83,6 +104,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://lh3.googleusercontent.com/proxy/6SJEegockxg8DuNUX0wFZBPm5Xni8kpDleR-6BgF-znQkjWeDa7RhiugKA3ogGsM8q_HnL79EDZsYOCTqUl4EXwJPnNTsd4R2vBdS7XW8GbQFi8ziaShmr4swT_9aT5boumTikZ28Vxg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -90,6 +113,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://images.squarespace-cdn.com/content/v1/5e710eb4047e71337122ffc3/1701739650008-8FLMGV3B7V6IF9LB5EOF/IMG_2271+right+cr.jpg?format=2500w",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -97,6 +122,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://images.squarespace-cdn.com/content/v1/5aaaba7b89c172e7df11e443/1676420851590-5AM41FU50MA9NDHABBI7/thrift+store+speakers.jpg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -104,6 +131,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://kiwanissale.com/wp-content/uploads/2020/02/IMG_0701.jpg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -111,6 +140,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://c7684bdb45.mjedge.net/wp-content/uploads/zikoko/2021/05/findthepro-thrift-clothes-1.jpg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -118,6 +149,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://bloximages.newyork1.vip.townnews.com/communitynews.org/content/tncms/assets/v3/editorial/a/02/a02feb52-32ae-11ec-b6eb-bbb9380d3b8a/6171cf9dd245f.image.jpg?crop=1662%2C873%2C0%2C187&resize=1200%2C630&order=crop%2Cresize",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
@@ -125,6 +158,8 @@ const Product = [
       " A haven for vintage enthusiasts, providing a curated selection of one-of-a-kind furniture pieces that evoke nostalgia and charm.",
     price: 110.0,
     url: "https://static.wixstatic.com/media/bfdbdd_bdcca12e6af845c5bd1a6819745298fc~mv2.jpg/v1/fill/w_980,h_735,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/bfdbdd_bdcca12e6af845c5bd1a6819745298fc~mv2.jpg",
+    category: "funiture",
+    seller: "Obas thrift funiture ",
   },
   {
     title: "Vintage Finds Emporium",
