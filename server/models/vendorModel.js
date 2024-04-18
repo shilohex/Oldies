@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
-const vendorSchema = mongoose.Schema(
+const vendorschema = mongoose.Schema(
   {
     shopname: {
       type: String,
       required: true,
     },
-    password: {
+    shopaddress: {
       type: String,
       required: true,
     },
@@ -14,14 +15,14 @@ const vendorSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    phone: {
+    number: {
       type: String,
       required: true,
       default: "+2345667",
     },
-    shopaddress: {
+    password: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   {
@@ -29,6 +30,13 @@ const vendorSchema = mongoose.Schema(
   }
 );
 
-const Vendor = mongoose.model("Vendor", vendorSchema);
+vendorschema.methods.matchPassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
+vendorschema.pre("save", async function (next) {
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
+const Vendor = mongoose.model("Vendor", vendorschema);
 
 module.exports = Vendor;

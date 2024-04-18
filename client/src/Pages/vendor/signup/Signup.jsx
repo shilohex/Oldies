@@ -1,12 +1,50 @@
 import { Link } from "react-router-dom";
 import "./signup.css";
-import React from "react";
 import Header from "../../../component/Header/Header";
 import Footer from "../../../component/Footer/Footer";
+import api from "../../../utils/api";
+import React, { useState } from "react";
+import { message } from "antd";
 
 const Signup = () => {
+  const [messageApi, contextHolder] = message.useMessage();
+  const [formData, setFormdata] = useState({
+    shopname: "",
+    email: "",
+    shopaddress: "",
+    password: "",
+    number: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const response = await api.post("vendor/register", formData);
+      console.log(response);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      // setErrors(error.response.data.error);
+      messageApi.open({
+        type: "error",
+        content: error.response.data.error,
+        duration: 5,
+        style: {
+          marginTop: "12%",
+          color: "red",
+        },
+      });
+      setLoading(false);
+    }
+  };
+
   return (
     <>
+      {contextHolder}
       <div className="body mt-[13rem] bg-white">
         <Header txtcol="#fff" bgcol="rgba(0,0,0,0.3)" />
         <div className="  relative py-3 sm:max-w-xl sm:mx-auto">
@@ -14,45 +52,63 @@ const Signup = () => {
             className="relative px-4 py-10 bg-sec2 mx-8 md:mx-0 shadow-2xl  rounded-3xl sm:p-10 "
             id="shadow"
           >
-            <div className="max-w-md mx-auto text-white">
+            <form
+              onSubmit={handleSubmit}
+              className="max-w-md mx-auto text-white"
+            >
               <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label
                     className="font-semibold text-sm text-white pb-1 block"
-                    for="fullname"
+                    for="shopname"
                   >
                     Shop Name*
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="text"
-                    id="fullname"
+                    id="shopname"
+                    value={formData.shopname}
+                    onChange={(e) =>
+                      setFormdata({ ...formData, shopname: e.target.value })
+                    }
+                    required
                   />
                 </div>
                 <div>
                   <label
                     className="font-semibold text-sm text-white pb-1 block"
-                    for="fullname"
+                    for="shopaddress"
                   >
                     Shop Address*
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="text"
-                    id="fullname"
+                    id="shopaddress"
+                    value={formData.shopaddress}
+                    onChange={(e) =>
+                      setFormdata({ ...formData, shopaddress: e.target.value })
+                    }
+                    required
                   />
                 </div>
                 <div>
                   <label
                     className="font-semibold text-sm text-white pb-1 block"
-                    for="fullname"
+                    for="number"
                   >
                     Number(optional)
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="number"
-                    id="fullname"
+                    id="number"
+                    value={formData.number}
+                    onChange={(e) =>
+                      setFormdata({ ...formData, number: e.target.value })
+                    }
+                    required
                   />
                 </div>
                 <div>
@@ -66,19 +122,11 @@ const Signup = () => {
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="email"
                     id="email"
-                  />
-                </div>
-                <div>
-                  <label
-                    className="font-semibold text-sm text-white pb-1 block"
-                    for="username"
-                  >
-                    Password*
-                  </label>
-                  <input
-                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
-                    type="text"
-                    id="username"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormdata({ ...formData, email: e.target.value })
+                    }
+                    required
                   />
                 </div>
                 <div>
@@ -86,12 +134,30 @@ const Signup = () => {
                     className="font-semibold text-sm text-white pb-1 block"
                     for="password"
                   >
+                    Password*
+                  </label>
+                  <input
+                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
+                    type="text"
+                    id="passowrd"
+                    value={formData.password}
+                    onChange={(e) =>
+                      setFormdata({ ...formData, password: e.target.value })
+                    }
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    className="font-semibold text-sm text-white pb-1 block"
+                    for="confirmpassword"
+                  >
                     Confirm Password*
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="password"
-                    id="password"
+                    id="confirmpassword"
                   />
                 </div>
               </div>
@@ -239,7 +305,7 @@ const Signup = () => {
 
                 <span className="w-1/5 border-b dark:border-pry md:w-1/4"></span>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

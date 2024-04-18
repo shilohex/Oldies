@@ -4,8 +4,10 @@ import "./signup.css";
 import Footer from "../../../component/Footer/Footer";
 import Header from "../../../component/Header/Header";
 import api from "../../../utils/api";
+import { message } from "antd";
 
 const Signup = () => {
+  const [messageApi, contextHolder] = message.useMessage();
   const [formData, setFormdata] = useState({
     fullName: "",
     email: "",
@@ -25,15 +27,26 @@ const Signup = () => {
       setLoading(false);
     } catch (error) {
       console.log(error);
-      setErrors(error.response.data.error);
+      // setErrors(error.response.data.error);
+      messageApi.open({
+        type: "error",
+        content: error.response.data.error,
+        duration: 5,
+        style: {
+          marginTop: "12%",
+          color: "red",
+        },
+      });
       setLoading(false);
     }
   };
 
   return (
     <>
+      {contextHolder}
       <Header bgcol="rgba(0,0,0,0.3)" txtcol="#fff" />
       <div className="body mt-[15rem] bg-white">
+        {/* <p className="text-red-500 "> {errors && errors}</p> */}
         <div className="  relative py-3 sm:max-w-xl sm:mx-auto">
           <div className="relative px-4 py-10 bg-sec2 mx-8 md:mx-0 shadow-2xl  rounded-3xl sm:p-10">
             <form
@@ -44,7 +57,7 @@ const Signup = () => {
                 <div>
                   <label
                     className="font-semibold text-sm text-white pb-1 block"
-                    for="fullname"
+                    htmlFor="fullname"
                   >
                     Full Name
                   </label>
@@ -260,7 +273,6 @@ const Signup = () => {
                 <span className="w-1/5 border-b dark:border-pry md:w-1/4"></span>
               </div>
             </form>
-            <p className="text-red-500"> {errors && errors}</p>
           </div>
         </div>
       </div>
