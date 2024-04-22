@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import ProductList from "../../component/Productlist";
+import Footer from "../../component/Footer/Footer";
 
 const VendorProfile = () => {
   const [newProducts, setnewProducts] = useState({
@@ -22,6 +23,7 @@ const VendorProfile = () => {
   return (
     <div>
       {/* <Header /> */}
+
       <div className="text-center border">
         <h1>Account Overview</h1>
         <hr />
@@ -32,14 +34,23 @@ const VendorProfile = () => {
         <div>
           <p>ADD NEW PRODUCT</p>
           <form onSubmit={handleSubmit}>
-            <input
+            <select
+              className="form-select text-center border gap-6"
+              aria-label="Default select example"
               type="text"
               placeholder="productName"
               value={newProducts.productName}
               onChange={(e) =>
                 setnewProducts({ ...newProducts, productName: e.target.value })
               }
-            />
+            >
+              <option selected>Category</option>
+              <option value="1">Furniture</option>
+              <option value="2">Thrift-store</option>
+              <option value="3">Electronics</option>
+              <option value="4">Antiques</option>
+            </select>
+
             <input
               type="text"
               placeholder="description"
@@ -68,6 +79,7 @@ const VendorProfile = () => {
           </form>
         </div>
       </div>
+      {/* <Footer /> */}
     </div>
   );
 };

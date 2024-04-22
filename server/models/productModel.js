@@ -15,11 +15,16 @@ const productschema = mongoose.Schema(
       type: String,
     },
     productOwnerId: {
-      type: mongoose.Types.ObjectId,
+      type: String,
+      // mongoose.Types.ObjectId
       ref: "User",
     },
     shopName: {
       type: String,
+    },
+    category: {
+      type: String,
+      required: true,
     },
   },
   {

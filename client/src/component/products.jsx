@@ -34,6 +34,7 @@ function Products() {
       {/* <h1 className="text-3xl font-bold underline mt-50 p-10 flex justify-center text-center">
         PRODUCTS
       </h1> */}
+
       <div className="flex justify-center text-center mb-9 mt-[220px] gap-5  focus:ring-pry">
         <input
           type="text"
