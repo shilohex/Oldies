@@ -66,21 +66,9 @@ const Header = ({ bgcol = "rgba(0,0,0,0.3)", txtcol = "#000" }) => {
             </div>
           </div>
           <div className="group relative z-10">
-            <p className="bg-pry px-3 py-1 border-pry rounded-xl">Login</p>
-            <div className="hidden shadow-md rounded group-hover:flex bg-[#f3f3f3] absolute text-black top-full -left-1/2 flex-col-reverse gap-2 p-4">
-              <Link
-                to={"/vendor/login"}
-                className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm"
-              >
-                Vendor
-              </Link>
-              <Link
-                to={"/login"}
-                className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm"
-              >
-                Buyer
-              </Link>
-            </div>
+            <Link to={"/login"} className=" py-1 rounded-sm">
+              <p className="bg-pry px-3 py-1 border-pry rounded-xl">Login</p>
+            </Link>
           </div>
 
           <div className="flex text-[#f3f3f3]  space-x-12 hover:ease-in-out duration-300">

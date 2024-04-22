@@ -2,29 +2,35 @@ import React, { useEffect, useState } from "react";
 import "./login.css";
 import Footer from "../../../component/Footer/Footer";
 import Header from "../../../component/Header/Header";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
+    console.log(email, password);
     e.preventDefault();
-    console.log(username);
-    console.log(password);
-
-    fetch("http://localhost:5001/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: username,
+    try {
+      const { data } = await axios.post("http://localhost:5001/user/login", {
+        email: email,
         password: password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      });
+
+      if (data.user.accountType === "buyer") {
+        console.log("hello");
+        navigate("/buyer-profile");
+        return;
+      }
+
+      if (data.user.accountType === "vendor") {
+        navigate("/vendor-profile");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -48,10 +54,10 @@ const Login = () => {
               <input
                 type="text"
                 className="inputField"
-                id="username"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                id="email"
+                placeholder="email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 

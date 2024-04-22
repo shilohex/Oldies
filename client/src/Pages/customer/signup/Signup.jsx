@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import "./signup.css";
 import Footer from "../../../component/Footer/Footer";
@@ -7,27 +7,16 @@ import api from "../../../utils/api";
 import { message } from "antd";
 
 const Signup = () => {
-  const [messageApi, contextHolder] = message.useMessage();
-  const success = () => {
-    messageApi.open({
-      type: "success",
-      content: "Account successfully created",
-      duration: 4,
-      style: {
-        marginTop: "12%",
-        color: "green",
-      },
-    });
-  };
   const [formData, setFormdata] = useState({
     fullName: "",
     email: "",
     username: "",
     password: "",
   });
+  const [messageApi, contextHolder] = message.useMessage();
 
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,10 +25,8 @@ const Signup = () => {
       const response = await api.post("user", formData);
       console.log(response);
       setLoading(false);
+      navigate("/buyer-profile");
     } catch (error) {
-      console.log(error);
-      // setErrors(error.response.data.error);
-
       messageApi.open({
         type: "error",
         content: error.response.data.error,
@@ -269,8 +256,6 @@ const Signup = () => {
                 <button
                   className="py-2 px-4 bg-white hover:bg-pry focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg  disabled:bg-[grey] "
                   type="submit"
-                  disabled={loading}
-                  onClick={success}
                 >
                   Sign up
                 </button>

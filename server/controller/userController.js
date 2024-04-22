@@ -10,7 +10,6 @@ const registerUser = async (req, res) => {
 
   try {
     const existingUser = await User.findOne({ email });
-    // console.log(User);
 
     if (existingUser) {
       return res.status(401).json({ error: "Email already in use" });
@@ -21,11 +20,11 @@ const registerUser = async (req, res) => {
       username: username,
       password: password,
       email: email,
+      accountType: "buyer",
     });
 
     if (newUser) {
-      console.log(newUser);
-      return res.status(201).json({ message: "User successfully created" });
+      return res.status(201).json({ ...newUser, password: undefined });
     }
   } catch (error) {
     console.error("Registration error:", error);
@@ -34,16 +33,21 @@ const registerUser = async (req, res) => {
 };
 
 const authUser = async (req, res) => {
-  const { username, password } = req.body;
-  if (!username || !password) {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
     return res.status(400).send({ error: "All fields are required" });
   }
-  const user = await User.findOne({ username });
+  const user = await User.findOne({ email });
+  console.log(user);
+
   if (!user) {
-    return res.status(401).send({ error: "Invalid username" });
+    return res.status(401).send({ error: "Invalid email" });
   }
 
   const isMatch = await user.matchPassword(password);
+  user.password = undefined;
+
   if (!isMatch) {
     return res.status(401).send({ error: "Invalid password" });
   }
@@ -52,8 +56,8 @@ const authUser = async (req, res) => {
     token: generateToken({
       id: user._id,
       email: user.email,
-      username: user.username,
     }),
+    user,
   });
 };
 

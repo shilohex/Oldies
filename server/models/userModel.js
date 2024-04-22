@@ -5,7 +5,16 @@ const userschema = mongoose.Schema(
   {
     fullName: {
       type: String,
+    },
+    shopname: {
+      type: String,
+    },
+    accountType: {
+      type: String,
       required: true,
+    },
+    shopaddress: {
+      type: String,
     },
     password: {
       type: String,
@@ -17,7 +26,6 @@ const userschema = mongoose.Schema(
     },
     username: {
       type: String,
-      required: true,
       default: "+2345667",
     },
     // address: {
@@ -37,6 +45,6 @@ userschema.pre("save", async function (next) {
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
-const User = mongoose.model("Buyer", userschema);
+const User = mongoose.model("User", userschema);
 
 module.exports = User;

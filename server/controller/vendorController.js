@@ -1,4 +1,4 @@
-const Vendor = require("../models/vendorModel");
+const User = require("../models/userModel");
 const { generateToken } = require("../utils/generateToken");
 
 const registerVendor = async (req, res) => {
@@ -9,24 +9,24 @@ const registerVendor = async (req, res) => {
   }
 
   try {
-    const existingVendor = await Vendor.findOne({ email });
+    const existingVendor = await User.findOne({ email });
     // console.log(User);
 
     if (existingVendor) {
       return res.status(401).json({ error: "Email already in use" });
     }
 
-    const newVendor = await Vendor.create({
+    const newVendor = await User.create({
       shopname: shopname,
       shopaddress: shopaddress,
       number: number,
       password: password,
       email: email,
+      accountType: "vendor",
     });
 
     if (newVendor) {
-      console.log(newVendor);
-      return res.status(201).json({ message: "User successfully created" });
+      return res.status(201).json({ ...newVendor, password: undefined });
     }
   } catch (error) {
     console.error("Registration error:", error);
@@ -39,7 +39,7 @@ const authVendor = async (req, res) => {
   if (!shopname || !password) {
     return res.status(400).send({ error: "All fields are required" });
   }
-  const vendor = await Vendor.findOne({ username });
+  const vendor = await User.findOne({ username });
   if (!vendor) {
     return res.status(401).send({ error: "Invalid username" });
   }

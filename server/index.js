@@ -6,6 +6,7 @@ const app = express();
 const port = 5001;
 const userRoutes = require("./routes/userRoutes");
 const VendorRoutes = require("./routes/vendorRoutes");
+const ProductRoutes = require("./routes/productRoutes");
 dotenv.config();
 connectdb();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 
 app.use("/user", userRoutes);
 app.use("/vendor", VendorRoutes);
+app.use("/product", ProductRoutes);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

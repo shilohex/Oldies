@@ -10,7 +10,8 @@ import Product from "./component/products.jsx";
 import About from "./Pages/About";
 import Checkout from "./Pages/Checkout/Checkout";
 import Carousel from "./component/carousel.jsx";
-import Profile from "./Pages/Profile/profile.jsx";
+import BuyerProfile from "./Pages/Profiles/buyerprofile.jsx";
+import VendorProfile from "./Pages/Profiles/vendorprofile.jsx";
 
 function App() {
   return (
@@ -19,14 +20,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Landingpage />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/products/:category" element={<Product />} />
           <Route path="/vendor/signup" element={<VendorSignUp />} />
-          <Route path="/vendor/login" element={<VendorLogin />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/carousel" element={<Carousel />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/vendor-profile" element={<VendorProfile />} />
+          <Route path="/buyer-profile" element={<BuyerProfile />} />
         </Routes>
       </BrowserRouter>
 

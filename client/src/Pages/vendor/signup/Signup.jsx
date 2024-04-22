@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./signup.css";
 import Header from "../../../component/Header/Header";
 import Footer from "../../../component/Footer/Footer";
@@ -8,17 +8,7 @@ import { message } from "antd";
 
 const Signup = () => {
   const [messageApi, contextHolder] = message.useMessage();
-  const success = () => {
-    messageApi.open({
-      type: "success",
-      content: "Account successfully created",
-      duration: 4,
-      style: {
-        marginTop: "12%",
-        color: "green",
-      },
-    });
-  };
+
   const [formData, setFormdata] = useState({
     shopname: "",
     email: "",
@@ -29,20 +19,34 @@ const Signup = () => {
 
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
       const response = await api.post("vendor/register", formData);
-      console.log(response);
+
       setLoading(false);
+
+      messageApi.open({
+        type: "success",
+        content: "Account successfully created",
+        duration: 4,
+        style: {
+          marginTop: "12%",
+          color: "green",
+        },
+      });
+      console.log(response);
+      navigate("/vendor-profile");
     } catch (error) {
       console.log(error);
-      // setErrors(error.response.data.error);
       messageApi.open({
         type: "error",
-        content: error.response.data.error,
+        content:
+          error.response.data.error ||
+          "Network error trying to create account. try again",
         duration: 5,
         style: {
           marginTop: "12%",
@@ -299,10 +303,9 @@ const Signup = () => {
               </div>
               <div class="mt-5">
                 <button
-                  className="py-2 px-4 bg-white hover:bg-pry focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                  className="py-2 px-4 bg-white cursor-pointer hover:bg-pry focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
                   type="submit"
                   disabled={loading}
-                  onClick={success}
                 >
                   Sign up
                 </button>
