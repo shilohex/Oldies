@@ -8,6 +8,17 @@ import { message } from "antd";
 
 const Signup = () => {
   const [messageApi, contextHolder] = message.useMessage();
+  const success = () => {
+    messageApi.open({
+      type: "success",
+      content: "Account successfully created",
+      duration: 4,
+      style: {
+        marginTop: "12%",
+        color: "green",
+      },
+    });
+  };
   const [formData, setFormdata] = useState({
     fullName: "",
     email: "",
@@ -28,15 +39,17 @@ const Signup = () => {
     } catch (error) {
       console.log(error);
       // setErrors(error.response.data.error);
+
       messageApi.open({
         type: "error",
         content: error.response.data.error,
-        duration: 5,
+        duration: 4,
         style: {
           marginTop: "12%",
           color: "red",
         },
       });
+
       setLoading(false);
     }
   };
@@ -257,6 +270,7 @@ const Signup = () => {
                   className="py-2 px-4 bg-white hover:bg-pry focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg  disabled:bg-[grey] "
                   type="submit"
                   disabled={loading}
+                  onClick={success}
                 >
                   Sign up
                 </button>

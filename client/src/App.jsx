@@ -10,6 +10,7 @@ import Product from "./component/products.jsx";
 import About from "./Pages/About";
 import Checkout from "./Pages/Checkout/Checkout";
 import Carousel from "./component/carousel.jsx";
+import Profile from "./Pages/Profile/profile.jsx";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/carousel" element={<Carousel />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
 

@@ -8,6 +8,17 @@ import { message } from "antd";
 
 const Signup = () => {
   const [messageApi, contextHolder] = message.useMessage();
+  const success = () => {
+    messageApi.open({
+      type: "success",
+      content: "Account successfully created",
+      duration: 4,
+      style: {
+        marginTop: "12%",
+        color: "green",
+      },
+    });
+  };
   const [formData, setFormdata] = useState({
     shopname: "",
     email: "",
@@ -290,6 +301,8 @@ const Signup = () => {
                 <button
                   className="py-2 px-4 bg-white hover:bg-pry focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
                   type="submit"
+                  disabled={loading}
+                  onClick={success}
                 >
                   Sign up
                 </button>
