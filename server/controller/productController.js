@@ -35,7 +35,7 @@ const createProduct = async (req, res) => {
     });
 
     if (newProduct) {
-      return res.status(201).send("Product created successfully");
+      return res.status(201).json({ message: "Product created successfully" });
     }
   } catch (error) {
     console.error("Product error:", error);
@@ -45,7 +45,7 @@ const createProduct = async (req, res) => {
 
 const getAllProducts = async (req, res) => {
   try {
-    const products = await Product.find();
+    const products = await Product.find({});
     if (products) {
       return res.status(200).json(products);
     }

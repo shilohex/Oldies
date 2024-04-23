@@ -1,27 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Productscard from "./Productscard";
+import axios from "axios";
 
-// const productlist = ({ list }) => {
-//   return (
-//     <div>
-//       <h1>Product List</h1>
-//       <div className="grid  gap-5  grid-cols-5">
-//         {list.map((product, index) => (
-//           <Productscard key={index} {...product} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
+const ProductList = () => {
+  const [allProducts, setAllProducts] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-// export default productlist;
+  const getProducts = async () => {
+    setLoading(true);
+    try {
+      const { data } = await axios.get("http://localhost:5001/product");
+      setAllProducts(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-const ProductList = ({ list }) => {
+  useEffect(() => {
+    getProducts();
+  }, []);
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  console.log(allProducts);
   return (
     <div>
       {/* <h1 className="text-3xl font-bold mb-5">Product List</h1> */}
       <div className="grid  mt-15 gap-6 grid-cols-5">
-        {list.map((product, index) => (
+        {allProducts?.map((product, index) => (
           <Productscard key={index} {...product} />
         ))}
       </div>

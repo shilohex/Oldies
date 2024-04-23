@@ -1,58 +1,42 @@
 import { Link, useNavigate } from "react-router-dom";
-import "./signup.css";
-import Header from "../../../component/Header/Header";
-import Footer from "../../../component/Footer/Footer";
-import api from "../../../utils/api";
 import React, { useState } from "react";
+import "./customer-signup.css";
+import Footer from "../../../component/Footer/Footer";
+import Header from "../../../component/Header/Header";
+import api from "../../../utils/api";
 import { message } from "antd";
 
-const Signup = () => {
+const CustomerSignup = () => {
+  const [formData, setFormdata] = useState({
+    fullName: "",
+    email: "",
+    username: "",
+    password: "",
+  });
   const [messageApi, contextHolder] = message.useMessage();
 
-  const [formData, setFormdata] = useState({
-    shopname: "",
-    email: "",
-    shopaddress: "",
-    password: "",
-    number: "",
-  });
-
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await api.post("vendor/register", formData);
-
-      setLoading(false);
-
-      messageApi.open({
-        type: "success",
-        content: "Account successfully created",
-        duration: 4,
-        style: {
-          marginTop: "12%",
-          color: "green",
-        },
-      });
+      const response = await api.post("user", formData);
       console.log(response);
-      navigate("/vendor-profile");
+      setLoading(false);
+      navigate("/buyer-profile");
     } catch (error) {
-      console.log(error);
       messageApi.open({
         type: "error",
-        content:
-          error.response.data.error ||
-          "Network error trying to create account. try again",
-        duration: 5,
+        content: error.response.data.error,
+        duration: 4,
         style: {
           marginTop: "12%",
           color: "red",
         },
       });
+
       setLoading(false);
     }
   };
@@ -60,13 +44,11 @@ const Signup = () => {
   return (
     <>
       {contextHolder}
-      <div className="body mt-[13rem] bg-white">
-        <Header txtcol="#fff" bgcol="rgba(0,0,0,0.3)" />
+      <Header bgcol="rgba(0,0,0,0.3)" txtcol="#fff" />
+      <div className="body mt-[15rem] bg-white">
+        {/* <p className="text-red-500 "> {errors && errors}</p> */}
         <div className="  relative py-3 sm:max-w-xl sm:mx-auto">
-          <div
-            className="relative px-4 py-10 bg-sec2 mx-8 md:mx-0 shadow-2xl  rounded-3xl sm:p-10 "
-            id="shadow"
-          >
+          <div className="relative px-4 py-10 bg-sec2 mx-8 md:mx-0 shadow-2xl  rounded-3xl sm:p-10">
             <form
               onSubmit={handleSubmit}
               className="max-w-md mx-auto text-white"
@@ -75,53 +57,17 @@ const Signup = () => {
                 <div>
                   <label
                     className="font-semibold text-sm text-white pb-1 block"
-                    for="shopname"
+                    htmlFor="fullname"
                   >
-                    Shop Name*
+                    Full Name
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="text"
-                    id="shopname"
-                    value={formData.shopname}
+                    id="fullname"
+                    value={formData.fullName}
                     onChange={(e) =>
-                      setFormdata({ ...formData, shopname: e.target.value })
-                    }
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    className="font-semibold text-sm text-white pb-1 block"
-                    for="shopaddress"
-                  >
-                    Shop Address*
-                  </label>
-                  <input
-                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
-                    type="text"
-                    id="shopaddress"
-                    value={formData.shopaddress}
-                    onChange={(e) =>
-                      setFormdata({ ...formData, shopaddress: e.target.value })
-                    }
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    className="font-semibold text-sm text-white pb-1 block"
-                    for="number"
-                  >
-                    Number(optional)
-                  </label>
-                  <input
-                    className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
-                    type="number"
-                    id="number"
-                    value={formData.number}
-                    onChange={(e) =>
-                      setFormdata({ ...formData, number: e.target.value })
+                      setFormdata({ ...formData, fullName: e.target.value })
                     }
                     required
                   />
@@ -131,7 +77,7 @@ const Signup = () => {
                     className="font-semibold text-sm text-white pb-1 block"
                     for="email"
                   >
-                    Email*
+                    Email
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
@@ -147,17 +93,17 @@ const Signup = () => {
                 <div>
                   <label
                     className="font-semibold text-sm text-white pb-1 block"
-                    for="password"
+                    for="username"
                   >
-                    Password*
+                    Username
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="text"
-                    id="passowrd"
-                    value={formData.password}
+                    id="username"
+                    value={formData.username}
                     onChange={(e) =>
-                      setFormdata({ ...formData, password: e.target.value })
+                      setFormdata({ ...formData, username: e.target.value })
                     }
                     required
                   />
@@ -165,14 +111,19 @@ const Signup = () => {
                 <div>
                   <label
                     className="font-semibold text-sm text-white pb-1 block"
-                    for="confirmpassword"
+                    for="password"
                   >
-                    Confirm Password*
+                    Password
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
                     type="password"
-                    id="confirmpassword"
+                    id="password"
+                    value={formData.password}
+                    onChange={(e) =>
+                      setFormdata({ ...formData, password: e.target.value })
+                    }
+                    required
                   />
                 </div>
               </div>
@@ -303,20 +254,19 @@ const Signup = () => {
               </div>
               <div class="mt-5">
                 <button
-                  className="py-2 px-4 bg-white cursor-pointer hover:bg-pry focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                  className="py-2 px-4 bg-white hover:bg-pry focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg  disabled:bg-[grey] "
                   type="submit"
-                  disabled={loading}
                 >
                   Sign up
                 </button>
               </div>
-              <div class="flex items-center justify-between mt-4">
+              <div className="flex items-center justify-between mt-4">
                 <span class="w-1/5 border-b dark:border-pry md:w-1/4"></span>
                 <a
                   className="text-xs text-white uppercase dark:text-white hover:underline"
                   href="#"
                 >
-                  <Link to="/vendor/login">have an account? Log in</Link>
+                  <Link to="/login">have an account? Log in </Link>
                 </a>
 
                 <span className="w-1/5 border-b dark:border-pry md:w-1/4"></span>
@@ -325,9 +275,10 @@ const Signup = () => {
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );
 };
 
-export default Signup;
+export default CustomerSignup;

@@ -19,7 +19,7 @@ const Header = ({ bgcol = "rgba(0,0,0,0.3)", txtcol = "#000" }) => {
             <p className=" hover:text-[#f3f3f3]">
               50% OFF EVERY SHOES AND BOOTS
             </p>
-            <Link to={"/products/:category"}>
+            <Link to={"/product"}>
               <p className=" hover:text-[#f3f3f3] ">SHOP NOW </p>
             </Link>
           </div>
@@ -49,17 +49,19 @@ const Header = ({ bgcol = "rgba(0,0,0,0.3)", txtcol = "#000" }) => {
             </form>
           </div>
           <div className="group relative z-10">
-            <p className="bg-pry px-3 py-1 border-pry rounded-xl">Sign Up</p>
+            <p className="bg-pry px-3 py-1 border-pry rounded-xl text-sec2">
+              Sign Up
+            </p>
             <div className="hidden shadow-md rounded group-hover:flex bg-[#f3f3f3] absolute text-black top-full -left-1/2 flex-col-reverse gap-2 p-4">
               <Link
                 to={"/vendor/signup"}
-                className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm"
+                className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm text-sec2"
               >
                 Vendor
               </Link>
               <Link
-                to={"/signup"}
-                className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm"
+                to={"/customer/signup"}
+                className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm text-sec2"
               >
                 Buyer
               </Link>
@@ -67,7 +69,9 @@ const Header = ({ bgcol = "rgba(0,0,0,0.3)", txtcol = "#000" }) => {
           </div>
           <div className="group relative z-10">
             <Link to={"/login"} className=" py-1 rounded-sm">
-              <p className="bg-pry px-3 py-1 border-pry rounded-xl">Login</p>
+              <p className="bg-pry px-3 py-1 border-pry rounded-xl text-sec2">
+                Login
+              </p>
             </Link>
           </div>
 

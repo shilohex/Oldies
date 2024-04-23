@@ -1,17 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import React from "react";
-import Signup from "./Pages/customer/signup/Signup";
-import Login from "./Pages/customer/login/Login";
-import VendorSignUp from "./Pages/vendor/signup/Signup";
+
 import Landingpage from "./Pages/landingpage/Landingpage";
-import VendorLogin from "./Pages/vendor/login/Login";
+
 import Product from "./component/products.jsx";
 import About from "./Pages/About";
 import Checkout from "./Pages/Checkout/Checkout";
 import Carousel from "./component/carousel.jsx";
 import BuyerProfile from "./Pages/Profiles/buyerprofile.jsx";
-import VendorProfile from "./Pages/Profiles/vendorprofile.jsx";
+import VendorProfile from "./Pages/Profiles/vendor/VendorProfile.jsx";
+import VendorSignup from "./Pages/auth/vendor-signup/VendorSignup.jsx";
+import CustomerSignup from "./Pages/auth/customer-signup/CustomerSignup.jsx";
+import Login from "./Pages/auth/login/Login.jsx";
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landingpage />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/vendor/signup" element={<VendorSignUp />} />
+          <Route path="/customer/signup" element={<CustomerSignup />} />
+          <Route path="/vendor/signup" element={<VendorSignup />} />
           <Route path="/product" element={<Product />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />

@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useContext } from "react";
 import "./login.css";
 import Footer from "../../../component/Footer/Footer";
 import Header from "../../../component/Header/Header";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../context/AuthContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
-    console.log(email, password);
     e.preventDefault();
     try {
       const { data } = await axios.post("http://localhost:5001/user/login", {
@@ -21,11 +22,13 @@ const Login = () => {
 
       if (data.user.accountType === "buyer") {
         console.log("hello");
+        setUser(data.user);
         navigate("/buyer-profile");
         return;
       }
 
       if (data.user.accountType === "vendor") {
+        setUser(data.user);
         navigate("/vendor-profile");
       }
     } catch (error) {

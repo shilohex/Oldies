@@ -2,27 +2,30 @@ import React from "react";
 import { useState } from "react";
 import Filter from "./Filter.jsx";
 import Productlist from "./Productlist.jsx";
-import products from "../product.js";
+
 import Footer from "./Footer/Footer.jsx";
 import Header from "./Header/Header.jsx";
 
 function Products() {
-  const [product, setProduct] = useState(products);
-  const [filterByTitle, SetfilterByTitle] = useState("");
+  const [filterByProductName, SetfilterByProductName] = useState("");
   const [filterByPrice, setfilterByPrice] = useState();
+  const [filterByCategory, setfilterByCategory] = useState();
+
   const [newProduct, setnewProduct] = useState({
-    title: "",
+    productName: "",
     description: "",
-    url: "",
+    imageurl: "",
+    category: "",
     price: 0,
   });
   function handleSubmit(e) {
     e.preventDefault();
     setProduct([...product, newProduct]);
     setnewProduct({
-      title: "",
+      productName: "",
       description: "",
-      Url: "",
+      imageurl: "",
+      category: "",
       price: 0,
     });
   }
@@ -38,9 +41,9 @@ function Products() {
       <div className="flex justify-center text-center mb-9 mt-[220px] gap-5  focus:ring-pry">
         <input
           type="text"
-          placeholder="Filter by title"
-          value={filterByTitle}
-          onChange={(e) => SetfilterByTitle(e.target.value)}
+          placeholder="Filter by productName"
+          value={filterByProductName}
+          onChange={(e) => SetfilterByProductName(e.target.value)}
         />
         <input
           type="text"
@@ -48,11 +51,22 @@ function Products() {
           value={filterByPrice}
           onChange={(e) => setfilterByPrice(e.target.value)}
         />
+        <input
+          type="text"
+          placeholder="Filter by category"
+          value={filterByCategory}
+          onChange={(e) => setfilterByCategory(e.target.value)}
+        />
       </div>
-      {filterByPrice || filterByTitle ? (
-        <Filter list={product} price={filterByPrice} title={filterByTitle} />
+      {filterByPrice || filterByProductName ? (
+        <Filter
+          list={product}
+          price={filterByPrice}
+          productName={filterByProductName}
+          category={filterByCategory}
+        />
       ) : (
-        <Productlist list={product} />
+        <Productlist />
       )}
       <Footer />
     </>
