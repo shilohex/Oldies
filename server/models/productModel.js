@@ -24,6 +24,7 @@ const productschema = mongoose.Schema({
   category: {
     type: String,
     required: true,
+    lowercase: true,
   },
 });
 

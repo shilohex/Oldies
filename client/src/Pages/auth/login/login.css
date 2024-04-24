@@ -30,7 +30,7 @@
 
 .heading {
   font-size: 1em;
-  color: #2e2e2e;
+  color: #31525b;
   font-weight: 700;
   margin: 5px 0 10px 0;
   z-index: 2;
@@ -71,7 +71,7 @@
 }
 
 .inputField::placeholder {
-  color: rgb(80, 80, 80);
+  color: black;
   font-size: 1em;
   font-weight: 500;
 }

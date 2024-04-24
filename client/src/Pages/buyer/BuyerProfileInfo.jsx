@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import { AuthContext } from "../../../context/AuthContext";
 import axios from "axios";
-import ProductList from "../../../component/Productlist";
+import { AuthContext } from "../../context/AuthContext";
 
-const VendorProfileInfo = () => {
+const BuyerProfileInfo = () => {
   let { user } = React.useContext(AuthContext);
 
-  const shopname = localStorage.getItem("shopname");
+  const username = localStorage.getItem("username");
   const email = localStorage.getItem("email");
 
   return (
@@ -26,7 +25,7 @@ const VendorProfileInfo = () => {
         </div>
         <div>
           <h1 className="text-3xl font-bold  text-sec">
-            {user ? user.shopname : shopname}
+            {user ? user.username : username}
           </h1>
           <h2 className="text-lg text-sec">{user ? user.email : email}</h2>
         </div>
@@ -35,4 +34,4 @@ const VendorProfileInfo = () => {
   );
 };
 
-export default VendorProfileInfo;
+export default BuyerProfileInfo;

@@ -39,7 +39,6 @@ const authUser = async (req, res) => {
     return res.status(400).send({ error: "All fields are required" });
   }
   const user = await User.findOne({ email });
-  console.log(user);
 
   if (!user) {
     return res.status(401).send({ error: "Invalid email" });

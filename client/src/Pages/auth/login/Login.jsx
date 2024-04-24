@@ -22,12 +22,21 @@ const Login = () => {
 
       if (data.user.accountType === "buyer") {
         console.log("hello");
+        localStorage.setItem("shopname", {
+          blaa: data.user.shopname,
+          saaa: "hsjd",
+        });
+        localStorage.setItem("email", data.user.email);
+        localStorage.setItem("_id", data.user._id);
         setUser(data.user);
         navigate("/buyer-profile");
         return;
       }
 
       if (data.user.accountType === "vendor") {
+        localStorage.setItem("_id", data.user._id);
+        localStorage.setItem("shopname", data.user.shopname);
+        localStorage.setItem("email", data.user.email);
         setUser(data.user);
         navigate("/vendor-profile");
       }
@@ -86,7 +95,7 @@ const Login = () => {
             </div>
 
             <button id="button">Login</button>
-            <a className="forgotLink" href="#">
+            <a className="forgotLink " href="#">
               Forgot your password?
             </a>
           </form>

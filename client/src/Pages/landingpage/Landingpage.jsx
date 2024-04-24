@@ -15,11 +15,11 @@ import { LuLampCeiling } from "react-icons/lu";
 import Carousel from "../../component/carousel";
 
 const Landingpage = () => {
-  useEffect(() => {
-    fetch("http://localhost:5001/countries")
-      .then((response) => response.json())
-      .then((responseObject) => console.log(responseObject));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:5001/countries")
+  //     .then((response) => response.json())
+  //     .then((responseObject) => console.log(responseObject));
+  // }, []);
   const slides = [
     "https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg",
     // "https://q-furniture.com/wp-content/uploads/2023/06/used-furniture-stores-07-scaled.jpg",
@@ -46,7 +46,7 @@ const Landingpage = () => {
 
           <div className="w-full h-full text-center absolute text-[#f3f3f3] justify-around items-center text-[2rem]  bg-[rgba(0,0,0,0.3)] top-0 flex ">
             <Link
-              to={"/products/furnitures"}
+              to={"/product/furnitures"}
               className="w-[15%] flex flex-col items-center hover:text-[2.5rem]"
             >
               <FaCouch />
@@ -55,7 +55,7 @@ const Landingpage = () => {
               </span>
             </Link>
             <Link
-              to={"/products/antiques"}
+              to={"/product/antiques"}
               className="w-[15%] flex flex-col items-center hover:text-[2.5rem]"
             >
               <LuLampCeiling />
@@ -63,7 +63,7 @@ const Landingpage = () => {
             </Link>
 
             <Link
-              to={"/products/thrift"}
+              to={"/product/thrift-shops"}
               className="w-[15%] flex flex-col items-center hover:text-[2.5rem]"
             >
               <GiClothes />
@@ -71,7 +71,7 @@ const Landingpage = () => {
             </Link>
 
             <Link
-              to={"/products/electronics"}
+              to={"/product/electronics"}
               className="w-[15%] flex flex-col items-center hover:text-[2.5rem]"
             >
               <LuRefrigerator />
@@ -79,8 +79,11 @@ const Landingpage = () => {
             </Link>
             <div className=" text-center absolute top-[70%] text-[#f3f3f3] justify-around items-center text-[2rem] flex">
               <Link to={"/product"}>
-                <button className="flex border-pry rounded-xl justify-center item-center flex-col p-2 text-[1.5rem] hover:text-[2rem] text-sec2 bg-pry ">
-                  <b> Shop Now </b>
+                {/* <button className="flex border-pry rounded-xl justify-center item-center flex-col p-2 text-[1.5rem] hover:text-[2rem] text-sec2 bg-pry ">
+                  Shop Now
+                </button> */}
+                <button class="bg-pry hover:bg-[#f8e5c4] text-sec2 flex justify-center item-center flex-col font-bold py-2 px-4 rounded-full animate-pulse">
+                  Shop Now
                 </button>
               </Link>
             </div>

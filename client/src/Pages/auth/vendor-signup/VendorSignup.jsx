@@ -39,7 +39,7 @@ const VendorSignup = () => {
         },
       });
       console.log(response);
-      navigate("/vendor-profile");
+      navigate("/login");
     } catch (error) {
       console.log(error);
       messageApi.open({
@@ -209,7 +209,8 @@ const VendorSignup = () => {
               </div>
               <div className="flex justify-center items-center">
                 <div>
-                  <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg-[#f8e5c4] focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
+                  [#f8e5c4]
+                  <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg- focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
                     <svg
                       viewBox="0 0 24 24"
                       height="25"

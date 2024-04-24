@@ -6,19 +6,23 @@ import Productlist from "./Productlist.jsx";
 import Footer from "./Footer/Footer.jsx";
 import Header from "./Header/Header.jsx";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
-function Products() {
+function ProductCategory() {
   const [filterByProductName, SetfilterByProductName] = useState("");
   const [filterByPrice, setfilterByPrice] = useState();
   const [filterByCategory, setfilterByCategory] = useState();
-
+  const location = useLocation();
+  const productCategoryToFilter = location.pathname.split("/")[2];
   const [allProducts, setAllProducts] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const getProducts = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get("http://localhost:5001/product");
+      const { data } = await axios.get(
+        `http://localhost:5001/product?category=${productCategoryToFilter}`
+      );
       setAllProducts(data);
     } catch (error) {
       console.log(error);
@@ -76,4 +80,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default ProductCategory;

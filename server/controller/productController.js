@@ -44,8 +44,15 @@ const createProduct = async (req, res) => {
 };
 
 const getAllProducts = async (req, res) => {
+  const { category } = req.query;
+  const queryObject = {};
+
+  if (category) {
+    queryObject.category = category;
+  }
+
   try {
-    const products = await Product.find({});
+    const products = await Product.find(queryObject);
     if (products) {
       return res.status(200).json(products);
     }
@@ -55,4 +62,16 @@ const getAllProducts = async (req, res) => {
   }
 };
 
-module.exports = { createProduct, getAllProducts };
+const getVendorOnlyProducts = async (req, res) => {
+  const vendorId = req.params.vendorId;
+  try {
+    const products = await Product.find({ productOwnerId: vendorId });
+    if (products) {
+      return res.status(200).json(products);
+    }
+  } catch (error) {
+    console.error("Product error:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+module.exports = { createProduct, getAllProducts, getVendorOnlyProducts };

@@ -25,7 +25,7 @@ const CustomerSignup = () => {
       const response = await api.post("user", formData);
       console.log(response);
       setLoading(false);
-      navigate("/buyer-profile");
+      navigate("/login");
     } catch (error) {
       messageApi.open({
         type: "error",

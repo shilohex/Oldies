@@ -8,14 +8,18 @@ import { AuthContext } from "../../../context/AuthContext";
 
 const AddProduct = () => {
   const { user } = React.useContext(AuthContext);
+  console.log(user);
+  const shopname = localStorage.getItem("shopname");
+  const _id = localStorage.getItem("_id");
+
   const [newProducts, setnewProducts] = useState({
     productName: "",
     description: "",
     imageUrl: "",
     category: "",
     price: 0,
-    shopName: user.shopname,
-    productOwnerId: user._id,
+    shopName: user ? user.shopname : shopname,
+    productOwnerId: user ? user._id : _id,
   });
   async function handleSubmit(e) {
     e.preventDefault();
@@ -41,15 +45,7 @@ const AddProduct = () => {
     <div>
       {/* <Header /> */}
 
-      <div className=" justify-center text-center border mt-20">
-        {/* <h1>Account Overview</h1>
-        <hr />
-        <div className=" flex gap-5">
-          <h2>ACCOUNT DETAILS</h2>
-
-          <hr />
-        </div> */}
-        <hr />
+      <div className=" justify-center text-center border mt-4">
         <div className="gap-5 justify-center text-center  bg-sec2 ">
           <p className="text-white">ADD NEW PRODUCT</p>
 
@@ -69,7 +65,7 @@ const AddProduct = () => {
             >
               <option selected>Category</option>
               <option value="Furniture">Furniture</option>
-              <option value="Thrift-store">Thrift-store</option>
+              <option value="Thrift-shops">Thrift-store</option>
               <option value="Electronics">Electronics</option>
               <option value="Antiques">Antiques</option>
             </select>
@@ -110,7 +106,7 @@ const AddProduct = () => {
               }
             />
             <button
-              className="border  focus:ring-pry focus:ring-offset-pry rounded-lg bg-pry p-2 hover:bg-[#f8e5c4]"
+              className="border-2 focus:ring-pry focus:ring-offset-pry rounded-lg bg-pry p-2 hover:bg-[#f8e5c4] text-sec2"
               type="submit"
             >
               Add
@@ -119,7 +115,6 @@ const AddProduct = () => {
         </div>
       </div>
       <div></div>
-      {/* <Footer /> */}
     </div>
   );
 };

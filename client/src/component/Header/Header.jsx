@@ -27,7 +27,11 @@ const Header = ({ bgcol = "rgba(0,0,0,0.3)", txtcol = "#000" }) => {
 
         <div className="flex items-center justify-evenly py-5 px-8 ">
           <Link to={"/"}>
-            <img src={logo} className="w-[7rem]" alt="" />
+            <img
+              src={logo}
+              className="w-[7rem] shadow-lg bg-sec2 rounded-full"
+              alt=""
+            />
           </Link>
           <div className="flex gap-8 text-white">
             <Link className="hover:text-pry ">Contact</Link>
