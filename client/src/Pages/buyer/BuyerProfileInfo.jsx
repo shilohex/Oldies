@@ -10,7 +10,7 @@ const BuyerProfileInfo = () => {
 
   return (
     <>
-      <div className="max-w-md mx-auto bg-sec2 rounded-xl overflow-hidden shadow-md p-6 flex items-center mt-3">
+      <div className="max-w-md mx-auto bg-sec2 rounded-full overflow-hidden shadow-md p-6 flex items-center mt-3">
         <div className="mr-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"

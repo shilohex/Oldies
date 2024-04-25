@@ -46,7 +46,7 @@ const Landingpage = () => {
 
           <div className="w-full h-full text-center absolute text-[#f3f3f3] justify-around items-center text-[2rem]  bg-[rgba(0,0,0,0.3)] top-0 flex ">
             <Link
-              to={"/product/furnitures"}
+              to={"/product/furniture"}
               className="w-[15%] flex flex-col items-center hover:text-[2.5rem]"
             >
               <FaCouch />

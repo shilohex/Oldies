@@ -74,4 +74,24 @@ const getVendorOnlyProducts = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
-module.exports = { createProduct, getAllProducts, getVendorOnlyProducts };
+
+const getProductById = async (req, res) => {
+  const productId = req.params.productId;
+  try {
+    const products = await Product.findOne({ productId: productId });
+    if (products) {
+      return res.status(200).json(products);
+    } else {
+      return res.status(404).json({ error: "Product not found" }); // Handle case when product is not found
+    }
+  } catch (error) {
+    console.error("Product error:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+module.exports = {
+  createProduct,
+  getAllProducts,
+  getVendorOnlyProducts,
+  getProductById,
+};

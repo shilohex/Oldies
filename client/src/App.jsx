@@ -12,6 +12,7 @@ import VendorSignup from "./Pages/auth/vendor-signup/VendorSignup.jsx";
 import CustomerSignup from "./Pages/auth/customer-signup/CustomerSignup.jsx";
 import Login from "./Pages/auth/login/Login.jsx";
 import ProductCategory from "./component/ProductCategory.jsx";
+import ProductPage from "./component/ProductPage.jsx";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/carousel" element={<Carousel />} />
           <Route path="/vendor-profile" element={<VendorProfile />} />
           <Route path="/buyer-profile" element={<BuyerProfile />} />
+          <Route path="/products/:id" element={<ProductPage />} />
         </Routes>
       </BrowserRouter>
 
