@@ -82,11 +82,15 @@ function Checkout() {
       {/* Header */}
       <div className="main">
         <Link to={"/"}>
-          <img src={logo} className="w-[6rem]" alt="" />
+          <img
+            src={logo}
+            className="w-[6rem] shadow-lg bg-sec2 rounded-full"
+            alt=""
+          />
         </Link>
         <div
           id="text2"
-          className="dark:md:hover:text-pry flex justify-center text-center"
+          className="dark:md:hover:text-pry  text-sec2 flex justify-center text-center"
         >
           <Link to={"/signup"}>
             <p> Sign Up</p>
@@ -95,7 +99,7 @@ function Checkout() {
       </div>
 
       {/* Cart Summary */}
-      <section className="box ">
+      <section className="box text-sec2 ">
         <div id="innertxt">
           <p>Home</p>
           <p>{">"}</p>
@@ -108,7 +112,7 @@ function Checkout() {
 
       {/* Product Details */}
       <section>
-        <div className="text">
+        <div className="text text-sec2 ">
           <p>Product</p>
           <div>
             <p>Unit price</p>
@@ -123,7 +127,7 @@ function Checkout() {
 
       {/* Subtotal */}
       <section>
-        <div className="subtotal">
+        <div className="subtotal text-sec2 ">
           <div>
             <p>Subtotal</p>
           </div>
@@ -133,7 +137,7 @@ function Checkout() {
         </div>
 
         {/* Checkout Button */}
-        <div className="checkout">
+        <div className="checkout rounded-full text-sec2">
           <div>
             <button onClick={handleCheckout}>CHECKOUT</button>
           </div>

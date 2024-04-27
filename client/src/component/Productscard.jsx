@@ -7,7 +7,7 @@ const Productscard = ({
   price,
   imageUrl,
   shopName,
-  _id = "iuiugiu",
+  _id,
 }) => {
   return (
     <>

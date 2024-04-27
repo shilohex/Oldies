@@ -18,7 +18,7 @@ function Products() {
   const getProducts = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get("http://localhost:5001/product");
+      const { data } = await axios.get(`http://localhost:5001/product`);
       setAllProducts(data);
     } catch (error) {
       console.log(error);

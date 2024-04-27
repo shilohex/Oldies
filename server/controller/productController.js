@@ -77,12 +77,13 @@ const getVendorOnlyProducts = async (req, res) => {
 
 const getProductById = async (req, res) => {
   const productId = req.params.productId;
+  console.log(productId);
   try {
-    const products = await Product.findOne({ productId: productId });
+    const products = await Product.findOne({ _id: productId });
     if (products) {
       return res.status(200).json(products);
     } else {
-      return res.status(404).json({ error: "Product not found" }); // Handle case when product is not found
+      return res.status(404).json({ error: "Product not found" });
     }
   } catch (error) {
     console.error("Product error:", error);

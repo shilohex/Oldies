@@ -3,7 +3,7 @@ import Productscard from "./Productscard";
 import axios from "axios";
 
 const ProductList = ({ products }) => {
-  console.log(products);
+  // console.log(products);
   return (
     <div>
       {/* <h1 className="text-3xl font-bold mb-5">Product List</h1> */}
