@@ -3,6 +3,7 @@ import logo from "../../assets/oldies3.png";
 import { CiFacebook } from "react-icons/ci";
 import { CiTwitter } from "react-icons/ci";
 import { CiInstagram } from "react-icons/ci";
+import { FaRegCopyright } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -56,7 +57,10 @@ const Footer = () => {
         </div>
       </div>
       <div className="py-6 border-t text-center text-[#f3f3f3]">
-        <p>@ Copyright 2024 All Rights Reserved by Oldies</p>
+        <div className="flex justify-center items-center ">
+          <FaRegCopyright />
+          Copyright 2024 All Rights Reserved by Oldies
+        </div>
       </div>
     </div>
   );

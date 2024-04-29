@@ -117,7 +117,7 @@ const CustomerSignup = () => {
                   </label>
                   <input
                     className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-white text-gray-800 focus:border-pry focus:ring-2 focus:ring-pry"
-                    type="password"
+                    type=""
                     id="password"
                     value={formData.password}
                     onChange={(e) =>

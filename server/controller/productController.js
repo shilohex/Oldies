@@ -44,11 +44,14 @@ const createProduct = async (req, res) => {
 };
 
 const getAllProducts = async (req, res) => {
-  const { category } = req.query;
+  const { category, productName } = req.query;
   const queryObject = {};
 
   if (category) {
     queryObject.category = category;
+  }
+  if (productName) {
+    queryObject.productName = { $regex: productName };
   }
 
   try {

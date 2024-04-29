@@ -21,7 +21,7 @@ function ProductCategory() {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:5001/product?category=${productCategoryToFilter}`
+        `http://localhost:5001/product?category=${productCategoryToFilter}&productName=${filterByProductName}`
       );
       setAllProducts(data);
     } catch (error) {
@@ -33,7 +33,7 @@ function ProductCategory() {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [filterByProductName]);
   if (loading) {
     return <h1>Loading...</h1>;
   }
@@ -65,16 +65,9 @@ function ProductCategory() {
           onChange={(e) => setfilterByCategory(e.target.value)}
         />
       </div>
-      {filterByPrice || filterByProductName ? (
-        <Filter
-          list={product}
-          price={filterByPrice}
-          productName={filterByProductName}
-          category={filterByCategory}
-        />
-      ) : (
-        <Productlist products={allProducts} />
-      )}
+
+      <Productlist products={allProducts} />
+
       <Footer />
     </>
   );

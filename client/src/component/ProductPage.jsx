@@ -4,9 +4,13 @@ import axios from "axios";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import { FaCartPlus } from "react-icons/fa";
+import { CartContext } from "../context/CartContext";
+import { message } from "antd";
 
 const ProductPage = () => {
   const [singleProduct, setSingleProduct] = useState(null);
+  const [messageApi, contextHolder] = message.useMessage();
+  let { cartItems, setCartItems } = React.useContext(CartContext);
 
   const location = useLocation();
   const productId = location.pathname.split("/")[2];
@@ -27,6 +31,19 @@ const ProductPage = () => {
     }
   };
 
+  const addProductToCart = () => {
+    const checkIfItemInCartAlready = cartItems.find(
+      (item) => item._id === productId
+    );
+
+    if (checkIfItemInCartAlready) {
+      messageApi.error("Item already in cart");
+    } else {
+      const newCartItems = [...cartItems, singleProduct];
+      setCartItems(newCartItems);
+      messageApi.success("Product added to cart");
+    }
+  };
   useEffect(() => {
     getSingleProduct();
   }, []);
@@ -35,91 +52,100 @@ const ProductPage = () => {
     return <h1>Loading...</h1>;
   }
 
+  console.log(cartItems);
+
   return (
     <div>
+      {contextHolder}
       <Header />
       <div className="flex flex-col items-center justify-center p-10 mt-[180px] ">
         <h1 className="text-3xl text-sec2 font-bold mb-4">
           {singleProduct?.productName}
         </h1>
         <img
-          className="w-64 h-auto mb-4"
+          className="w-64 h-auto mb-4 rounded-lg"
           src={singleProduct?.imageUrl}
           alt={singleProduct?.productName}
         />
         <p className="text-gray-700">{singleProduct?.description}</p>
         <p className="text-gray-900 mt-4">Price: N{singleProduct?.price}</p>
 
-        <Link to={"/checkout"}>
-          <div>
-            <button className=" flex gap-5 justify-center items-center border-5 border-pry rounded-full p-4 m-5  mt-8 bg-pry  hover:bg-[#f8e5c4] text-sec2">
-              <FaCartPlus />
-              Add to cart
-            </button>
-          </div>
-        </Link>
+        <div>
+          <button
+            onClick={addProductToCart}
+            className=" flex gap-5 justify-center items-center border-5 border-pry rounded-full p-4 m-5  mt-8 bg-pry  hover:bg-[#f8e5c4] text-sec2"
+          >
+            <FaCartPlus />
+            Add to cart
+          </button>
+        </div>
+
+        <hr />
       </div>
 
-      <div className="flex justify-center items-center pr-10">
-        <p className="text-2xl text-sec2 mb-4 "> Customers also viewed </p>
+      <div className="flex   pr-10">
+        <p className="text-2xl text-sec2  hover:text-pry mt-10  p-3 ">
+          {" "}
+          Customers also viewed{" "}
+        </p>
       </div>
+      <Link to={"/product"}>
+        <div className=" gap-5 flex  h-[50vh] mb-4 p-2 border ">
+          {/* <img src={singleProduct?.imageUrl} alt="" /> */}
+          {/* <p className="felx justify-items-stretch mb-7">newly made top</p> */}
 
-      <div className=" gap-5 flex w-64 h-[50vh] mb-4 p-7 hover:bg-[#f8e5c4]">
-        <img src={singleProduct?.imageUrl} alt="" />
-        {/* <p className="felx justify-items-stretch mb-7">newly made top</p> */}
-
-        <Link to={`/products/${_id}`}>
           <div className=" max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
             <img
-              className="h-auto max-w-lg rounded-lg"
+              className=" w-64 h-auto mb-4 max-w-[200px] rounded-lg"
               src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
               alt=""
             />
           </div>
-        </Link>
-        <div className=" max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
-          <img
-            className="h-auto max-w-lg rounded-lg"
-            src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
-            alt=""
-          />
+
+          <div className=" max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+            <img
+              className="w-64 h-auto mb-4 max-w-[200px] rounded-lg"
+              src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
+              alt=""
+            />
+          </div>
+          <div className="max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+            <img
+              className="w-64 h-auto mb-4 max-w-[200px] rounded-lg"
+              src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
+              alt=""
+            />
+          </div>
+          <div className=" max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+            <img
+              className="w-64 h-auto mb-4 max-w-[200px] rounded-lg"
+              src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
+              alt=""
+            />
+          </div>
+          <div className=" max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+            <img
+              className="w-64 h-auto mb-4 max-w-[200px] rounded-lg"
+              src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
+              alt=""
+            />
+          </div>
+          <div className=" max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+            <img
+              className="w-64 h-auto mb-4 max-w-[200px] rounded-lg"
+              src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
+              alt=""
+            />
+          </div>
+          <div className=" max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+            <img
+              className="w-64 h-auto mb-4 max-w-[200px] rounded-lg"
+              src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
+              alt=""
+            />
+          </div>
         </div>
-        <div className="max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
-          <img
-            className="h-auto max-w-lg rounded-lg"
-            src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
-            alt=""
-          />
-        </div>
-        <div className=" max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
-          <img
-            className="h-auto max-w-lg rounded-lg"
-            src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
-            alt=""
-          />
-        </div>
-        <div className=" max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
-          <img
-            className="h-auto max-w-lg rounded-lg"
-            src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
-            alt=""
-          />
-        </div>
-        <div className=" max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
-          <img
-            className="h-auto max-w-lg rounded-lg"
-            src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
-            alt=""
-          />
-        </div>
-        <div className=" max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
-          <img
-            className="h-auto max-w-lg rounded-lg"
-            src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
-            alt=""
-          />
-        </div>
-      </div>
+      </Link>
 
       <Footer />
     </div>

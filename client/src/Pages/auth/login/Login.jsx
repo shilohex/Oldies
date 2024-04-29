@@ -5,12 +5,14 @@ import Header from "../../../component/Header/Header";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
+import { message } from "antd";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [messageApi, contextHolder] = message.useMessage();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -42,11 +44,23 @@ const Login = () => {
       }
     } catch (error) {
       console.log(error);
+      messageApi.open({
+        type: "error",
+        content:
+          error.response.data.error ||
+          "Network error trying to create account. try again",
+        duration: 5,
+        style: {
+          marginTop: "12%",
+          color: "red",
+        },
+      });
     }
   }
 
   return (
     <>
+      {contextHolder}
       <Header bgcol="rgba(0,0,0,0.3)" txtcol="#fff" />
       <div className=" bg-white">
         <div className="flex mt-[100px] justify-center items-center h-screen">

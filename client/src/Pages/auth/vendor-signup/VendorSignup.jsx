@@ -209,7 +209,6 @@ const VendorSignup = () => {
               </div>
               <div className="flex justify-center items-center">
                 <div>
-                  [#f8e5c4]
                   <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg- focus:ring-pry focus:ring-offset-pry text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
                     <svg
                       viewBox="0 0 24 24"
@@ -317,7 +316,7 @@ const VendorSignup = () => {
                   className="text-xs text-white uppercase dark:text-white hover:underline"
                   href="#"
                 >
-                  <Link to="/vendor/login">have an account? Log in</Link>
+                  <Link to={"/login"}>have an account? Log in</Link>
                 </a>
 
                 <span className="w-1/5 border-b dark:border-pry md:w-1/4"></span>

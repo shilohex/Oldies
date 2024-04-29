@@ -6,11 +6,11 @@ import Productlist from "./Productlist.jsx";
 import Footer from "./Footer/Footer.jsx";
 import Header from "./Header/Header.jsx";
 import axios from "axios";
-
+import { Select, Input } from "antd";
+const { Search } = Input;
 function Products() {
   const [filterByProductName, SetfilterByProductName] = useState("");
-  const [filterByPrice, setfilterByPrice] = useState();
-  const [filterByCategory, setfilterByCategory] = useState();
+  const [filterByCategory, setfilterByCategory] = useState("");
 
   const [allProducts, setAllProducts] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -18,7 +18,10 @@ function Products() {
   const getProducts = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get(`http://localhost:5001/product`);
+      const { data } = await axios.get(
+        `http://localhost:5001/product?category=${filterByCategory}&productName=${filterByProductName}`
+      );
+      console.log(data);
       setAllProducts(data);
     } catch (error) {
       console.log(error);
@@ -27,12 +30,12 @@ function Products() {
     }
   };
 
+  const handleChange = (value) => {
+    setfilterByCategory(value);
+  };
   useEffect(() => {
     getProducts();
-  }, []);
-  if (loading) {
-    return <h1>Loading...</h1>;
-  }
+  }, [filterByProductName, filterByCategory]);
 
   return (
     <>
@@ -41,36 +44,54 @@ function Products() {
         PRODUCTS
       </h1> */}
 
-      <div className="flex justify-center text-center mb-9 mt-[220px] gap-5  focus:ring-pry">
-        <input
+      <div className="flex justify-center items-center mb-9 mt-[220px] gap-5  focus:ring-pry">
+        <Input
+          size="large"
+          className="max-w-[250px]"
+          placeholder="What are you looking for..."
           type="text"
-          placeholder="Filter by productName"
           value={filterByProductName}
           onChange={(e) => SetfilterByProductName(e.target.value)}
         />
-        <input
-          type="text"
-          placeholder="Filter by price"
-          value={filterByPrice}
-          onChange={(e) => setfilterByPrice(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Filter by category"
-          value={filterByCategory}
-          onChange={(e) => setfilterByCategory(e.target.value)}
+
+        <Select
+          placeholder="Filter by Category"
+          size="large"
+          style={{
+            width: 200,
+          }}
+          onChange={handleChange}
+          options={[
+            {
+              value: "Furniture",
+              label: "Furniture",
+            },
+            {
+              value: "thrift-shops",
+              label: "thrift-shops",
+            },
+            {
+              value: "Electronics",
+              label: "Electronics",
+            },
+            {
+              value: "Antiques",
+              label: "Antiques",
+            },
+          ]}
         />
       </div>
-      {filterByPrice || filterByProductName ? (
-        <Filter
-          list={product}
-          price={filterByPrice}
-          productName={filterByProductName}
-          category={filterByCategory}
-        />
+
+      {allProducts?.length <= 0 ? (
+        <div className="grid place-items-center h-[calc(100vh-200px)]">
+          <h1 className="text-3xl text-gray-600 capitalize">
+            Sorry no product found. 🥲
+          </h1>
+        </div>
       ) : (
         <Productlist products={allProducts} />
       )}
+
       <Footer />
     </>
   );
