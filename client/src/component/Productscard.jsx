@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { formatToCurrency } from "../utils/helpers";
 
 const Productscard = ({
   productName,
@@ -21,7 +22,7 @@ const Productscard = ({
           <div className="p-4">
             <h2 className="text-lg font-semibold mb-2">{productName}</h2>
             <p className="text-gray-700">{description}</p>
-            <p className="text-gray-900 mt-2">N{price}</p>
+            <p className="text-gray-900 mt-2">{formatToCurrency(price)}</p>
             <p className="text-gray-900 mt-2">{shopName}</p>
           </div>
         </div>

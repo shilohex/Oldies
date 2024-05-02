@@ -263,7 +263,7 @@ const CustomerSignup = () => {
               <div className="flex items-center justify-between mt-4">
                 <span class="w-1/5 border-b dark:border-pry md:w-1/4"></span>
                 <a
-                  className="text-xs text-white uppercase dark:text-white hover:underline"
+                  className="text-xs text-white uppercase dark:text-white hover:underline hover:text-pry"
                   href="#"
                 >
                   <Link to="/login">have an account? Log in </Link>

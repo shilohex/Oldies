@@ -6,6 +6,7 @@ import Footer from "./Footer/Footer";
 import { FaCartPlus } from "react-icons/fa";
 import { CartContext } from "../context/CartContext";
 import { message } from "antd";
+import { formatToCurrency } from "../utils/helpers";
 
 const ProductPage = () => {
   const [singleProduct, setSingleProduct] = useState(null);
@@ -68,7 +69,9 @@ const ProductPage = () => {
           alt={singleProduct?.productName}
         />
         <p className="text-gray-700">{singleProduct?.description}</p>
-        <p className="text-gray-900 mt-4">Price: N{singleProduct?.price}</p>
+        <p className="text-gray-900 mt-4">
+          Price: {formatToCurrency(singleProduct?.price)}
+        </p>
 
         <div>
           <button
