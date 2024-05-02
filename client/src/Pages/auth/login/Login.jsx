@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://oldies.onrender.com//user/login",
+        "https://oldies.onrender.com/user/login",
         {
           email: email,
           password: password,
