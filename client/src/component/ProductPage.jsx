@@ -70,7 +70,7 @@ const ProductPage = () => {
         />
         <p className="text-gray-700">{singleProduct?.description}</p>
         <p className="text-gray-900 mt-4">
-          {formatToCurrency(singleProduct?.price)}
+          Price: {formatToCurrency(singleProduct?.price)}
         </p>
 
         <div>
