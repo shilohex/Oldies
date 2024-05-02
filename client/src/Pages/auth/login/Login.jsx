@@ -3,7 +3,7 @@ import "./login.css";
 import Footer from "../../../component/Footer/Footer";
 import Header from "../../../component/Header/Header";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import { message } from "antd";
 
@@ -84,7 +84,7 @@ const Login = () => {
                 type="text"
                 className="inputField"
                 id="email"
-                placeholder="email address"
+                placeholder="Email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -102,7 +102,7 @@ const Login = () => {
                 <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
               </svg>
               <input
-                type="password"
+                type="Password"
                 className="inputField"
                 id="password"
                 placeholder="Password"
