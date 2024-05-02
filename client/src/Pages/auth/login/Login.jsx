@@ -17,10 +17,13 @@ const Login = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:5001/user/login", {
-        email: email,
-        password: password,
-      });
+      const { data } = await axios.post(
+        "https://oldies.onrender.com//user/login",
+        {
+          email: email,
+          password: password,
+        }
+      );
 
       if (data.user.accountType === "buyer") {
         console.log("hello");

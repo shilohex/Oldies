@@ -20,7 +20,7 @@ const ProductPage = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:5001/product/products/${productId}`
+        `https://oldies.onrender.com/product/products/${productId}`
       );
       setSingleProduct(data);
       console.log(data);

@@ -21,7 +21,7 @@ function ProductCategory() {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:5001/product?category=${productCategoryToFilter}&productName=${filterByProductName}`
+        `https://oldies.onrender.com/product?category=${productCategoryToFilter}&productName=${filterByProductName}`
       );
       setAllProducts(data);
     } catch (error) {

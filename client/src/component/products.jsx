@@ -19,7 +19,7 @@ function Products() {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:5001/product?category=${filterByCategory}&productName=${filterByProductName}`
+        `https://oldies.onrender.com/product?category=${filterByCategory}&productName=${filterByProductName}`
       );
       console.log(data);
       setAllProducts(data);

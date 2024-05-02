@@ -15,19 +15,12 @@ import { LuLampCeiling } from "react-icons/lu";
 import Carousel from "../../component/carousel";
 
 const Landingpage = () => {
-  // useEffect(() => {
-  //   fetch("http://localhost:5001/countries")
-  //     .then((response) => response.json())
-  //     .then((responseObject) => console.log(responseObject));
-  // }, []);
   const slides = [
     "https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg",
-    // "https://q-furniture.com/wp-content/uploads/2023/06/used-furniture-stores-07-scaled.jpg",
-    // "https://images.squarespace-cdn.com/content/v1/5726544ef85082b93e0f14c1/1667833872825-1K3LRTE05458F1UL9U9W/Long+Island+Furniture+Thrift+Stores.jpg?format=2500w",
     "https://www.avintagesplendor.com/wp-content/uploads/2022/09/best-thrift-stores-in-la-scaled.jpg",
     "https://images.squarespace-cdn.com/content/v1/5511f9bee4b068878ae651fb/1530653308676-KRW7ALWO6UF7V6DGXXQ9/image-asset.jpeg",
     "https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg",
-    // "https://images.pexels.com/photos/2460457/pexels-photo-2460457.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  
   ];
   return (
     <>

@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { AuthContext } from "../../context/AuthContext";
+import { formatToCurrency } from "../../utils/helpers";
 
 function Checkout() {
   let { user } = React.useContext(AuthContext);
@@ -33,7 +34,7 @@ function Checkout() {
           />
           <div className=" justify-center flex text-center">
             <p className="text-lg">{item.ProductName}</p>
-            <p className="text-gray-600">N{item.price}</p>
+            <p className="text-gray-600">{formatToCurrency(item.price)}</p>
           </div>
         </div>
         <div className="flex items-center space-x-6">
@@ -50,7 +51,9 @@ function Checkout() {
           >
             +
           </button>
-          <p className="text-gray-600">N{item.price * item.quantity}</p>
+          <p className="text-gray-600">
+            {formatToCurrency(item.price * item.quantity)}
+          </p>
         </div>
       </div>
     ));
@@ -104,47 +107,45 @@ function Checkout() {
         </div>
       </div>
 
-      {/* Cart Summary */}
-      <section className="box text-sec2 ">
-        <div id="innertxt">
-          <div>
-            <span id="Cart">{cartItems.length}</span>
+      <section className="max-w-[700px] mx-auto">
+        {" "}
+        {/* Cart Summary */}
+        <section className="box text-sec2 ">
+          <div id="innertxt">
+            <div>
+              <span id="Cart">{cartItems.length}</span>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Product Details */}
-      <section>
-        <div className="text flex justify-between items-center m-auto mt-[1v] w-[100%] text-sec2 ">
-          <p>Product</p>
-          <div>
+        </section>
+        {/* Product Details */}
+        <section>
+          <div className="text flex justify-between items-center m-auto mt-[1v] w-[100%] text-sec2 ">
+            <p>Product</p>
             <p>Unit price</p>
             <p>Quantity</p>
             <p>Total</p>
           </div>
-        </div>
-      </section>
-      <div className="">{renderCartItems()}</div>
-
-      {/* Cart Items */}
-
-      {/* Subtotal */}
-      <section>
-        <div className="subtotal text-sec2 ">
-          <div>
-            <p>Subtotal</p>
+        </section>
+        <div className=" ">{renderCartItems()}</div>
+        {/* Cart Items */}
+        {/* Subtotal */}
+        <section>
+          <div className="subtotal text-sec2 ">
+            <div>
+              <p>Subtotal</p>
+            </div>
+            <div>
+              <p className="subtotal-value">{formatToCurrency(subtotal)}</p>
+            </div>
           </div>
-          <div>
-            <p className="subtotal-value">N{subtotal}</p>
-          </div>
-        </div>
 
-        {/* Checkout Button */}
-        <div className="checkout cursor-pointer rounded-full text-sec2">
-          <div>
-            <button onClick={handleCheckout}>CHECKOUT</button>
+          {/* Checkout Button */}
+          <div className="checkout cursor-pointer rounded-full w-[25%] text-sec2">
+            <div>
+              <button onClick={handleCheckout}>CHECKOUT</button>
+            </div>
           </div>
-        </div>
+        </section>
       </section>
 
       {/* Footer */}
