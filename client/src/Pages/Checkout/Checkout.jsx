@@ -5,10 +5,12 @@ import Footer from "../../component/Footer/Footer";
 import logo from "../../assets/oldieslogo.png";
 // import checkout from "../Checkout/checkout";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import { AuthContext } from "../../context/AuthContext";
 
 function Checkout() {
+  let { user } = React.useContext(AuthContext);
   let { cartItems, setCartItems } = React.useContext(CartContext);
 
   const subtotal = cartItems.reduce(
@@ -16,6 +18,7 @@ function Checkout() {
     0
   );
 
+  const navigate = useNavigate();
   const renderCartItems = () => {
     return cartItems.map((item) => (
       <div
@@ -73,6 +76,11 @@ function Checkout() {
 
   const handleCheckout = () => {
     // Handle checkout logic
+
+    if (!user.id) {
+      navigate("/login");
+      return;
+    }
   };
 
   return (
@@ -132,7 +140,7 @@ function Checkout() {
         </div>
 
         {/* Checkout Button */}
-        <div className="checkout rounded-full text-sec2">
+        <div className="checkout cursor-pointer rounded-full text-sec2">
           <div>
             <button onClick={handleCheckout}>CHECKOUT</button>
           </div>

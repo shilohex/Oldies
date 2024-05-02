@@ -31,6 +31,11 @@ const contact = () => {
           </Link>
         </div>
       </div>
+      <div className=" justify-center items-center text-center  flex flex-col text-[2rem]">
+        <p>Email: Oldies4all@gmail.com</p>
+        <p>Contact: +2340836591337</p>
+      </div>
+
       <Footer />
     </>
   );

@@ -73,7 +73,7 @@ const ProductPage = () => {
         <div>
           <button
             onClick={addProductToCart}
-            className=" flex gap-5 justify-center items-center border-5 border-pry rounded-full p-4 m-5  mt-8 bg-pry  hover:bg-[#f8e5c4] text-sec2"
+            className=" flex gap-5 justify-center items-center text-center border-5 border-pry rounded-full p-4 font-semi-bold   mt-8 bg-pry  hover:bg-[#f8e5c4] text-sec2"
           >
             <FaCartPlus />
             Add to cart
@@ -90,7 +90,7 @@ const ProductPage = () => {
         </p>
       </div>
       <Link to={"/product"}>
-        <div className=" gap-5 flex  h-[50vh] mb-4 p-2 border ">
+        <div className=" gap-5 flex  h-[50vh] mb-4 p-2 ">
           {/* <img src={singleProduct?.imageUrl} alt="" /> */}
           {/* <p className="felx justify-items-stretch mb-7">newly made top</p> */}
 
@@ -138,6 +138,13 @@ const ProductPage = () => {
             />
           </div>
           <div className=" max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+            <img
+              className="w-64 h-auto mb-4 max-w-[200px] rounded-lg"
+              src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
+              alt=""
+            />
+          </div>
+          <div className=" max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 overflow-hidden">
             <img
               className="w-64 h-auto mb-4 max-w-[200px] rounded-lg"
               src="https://www.nairaland.com/attachments/10644434_b7874361c956474ab5a87b5f6fb04196_jpeg_jpeg25be9089aac030c9ef9b62a42413a94a"
