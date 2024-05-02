@@ -25,7 +25,7 @@ const AddProduct = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5001/product",
+        "https://oldies.onrender.com/product",
         newProducts
       );
       setnewProducts({

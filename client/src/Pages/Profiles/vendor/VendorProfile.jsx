@@ -12,7 +12,7 @@ const VendorProfile = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/product");
+        const response = await axios.get("https://oldies.onrender.com/product");
         setProducts(response.data); // Assuming response.data is an array of products
       } catch (error) {
         console.error("Error fetching products:", error);
