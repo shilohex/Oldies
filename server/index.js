@@ -12,7 +12,11 @@ connectdb();
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://oldies-murex.vercel.app",
+    ],
   })
 );
 app.use(express.json());
