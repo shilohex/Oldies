@@ -9,7 +9,7 @@ const VendorsProducts = () => {
 
   const getVendorProducts = async () => {
     setLoading(true);
-    const url = `http://localhost:5001/product/${vendorId}`;
+    const url = `https://oldies.onrender.com/product/${vendorId}`;
     try {
       const response = await axios.get(url);
 
