@@ -38,7 +38,7 @@ const VendorSignup = () => {
           color: "green",
         },
       });
-      console.log(response);
+      // console.log(response);
       navigate("/login");
     } catch (error) {
       console.log(error);

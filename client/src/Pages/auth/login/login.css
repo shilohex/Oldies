@@ -79,11 +79,11 @@
 #button {
   z-index: 1;
   position: relative;
-  width: 50%;
+  width: 35%;
   border: none;
   background-color: #f8e5c4;
   height: 30px;
-  color: black;
+  color: #31525b;
   font-size: 0.8em;
   font-weight: 500;
   letter-spacing: 1px;

@@ -14,6 +14,8 @@ import Login from "./Pages/auth/login/Login.jsx";
 import ProductCategory from "./component/ProductCategory.jsx";
 import ProductPage from "./component/ProductPage.jsx";
 import Contact from "./Pages/Contact/contact.jsx";
+import Purchasepage from "./Pages/Checkout/Purchasepage.jsx";
+import Verification from "./Pages/auth/customer-signup/Verification.jsx";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
           <Route path="/buyer-profile" element={<BuyerProfile />} />
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/purchasepage" element={<Purchasepage />} />
+          <Route path="/verification" element={<Verification />} />
         </Routes>
       </BrowserRouter>
 

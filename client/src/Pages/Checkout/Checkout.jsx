@@ -141,6 +141,7 @@ function Checkout() {
 
           {/* Checkout Button */}
           <div className="checkout cursor-pointer rounded-full w-[25%] text-sec2">
+            {" "}
             <div>
               <button onClick={handleCheckout}>CHECKOUT</button>
             </div>

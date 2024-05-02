@@ -70,13 +70,13 @@ const ProductPage = () => {
         />
         <p className="text-gray-700">{singleProduct?.description}</p>
         <p className="text-gray-900 mt-4">
-          Price: {formatToCurrency(singleProduct?.price)}
+          Price: {singleProduct && formatToCurrency(singleProduct?.price)}
         </p>
 
         <div>
           <button
             onClick={addProductToCart}
-            className=" flex gap-5 justify-center items-center text-center border-5 border-pry rounded-full p-4 font-semi-bold   mt-8 bg-pry  hover:bg-[#f8e5c4] text-sec2"
+            className=" flex gap-3 justify-center items-center text-center border-5 border-pry rounded-full p-4 font-semi-bold   mt-8 bg-[#f8e5c4] hover:bg-pry text-sec2"
           >
             <FaCartPlus />
             Add to cart
