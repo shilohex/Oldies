@@ -35,11 +35,11 @@ const PurchasePopup = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-sec2 bg-opacity-50 z-50">
       <div className="bg-white p-4 rounded shadow-md">
         <h1 className="text-2xl font-bold mb-4">Payment</h1>
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+          <div className="mb-4 text-sec2">
             <label className="block mb-2" htmlFor="paymentMethod">
               Payment Method:
             </label>
@@ -50,12 +50,14 @@ const PurchasePopup = ({ onClose }) => {
               onChange={handlePaymentMethodChange}
               className="p-2 border rounded"
             >
-              <option value="creditCard">Credit Card</option>
+              <option className="hover:bg-pry" value="creditCard">
+                Credit Card
+              </option>
               <option value="bankAccount">Bank Account</option>
             </select>
           </div>
           {paymentMethod === "bankAccount" && (
-            <div className="mb-4">
+            <div className="mb-4 hover:bg-pry ">
               <label className="block mb-2" htmlFor="accountType">
                 Account Type:
               </label>
@@ -71,7 +73,7 @@ const PurchasePopup = ({ onClose }) => {
               </select>
             </div>
           )}
-          <div className="mb-4">
+          <div className="mb-4 text-sec2">
             <label className="block mb-2" htmlFor="accountNumber">
               Account Number:
             </label>
@@ -84,7 +86,7 @@ const PurchasePopup = ({ onClose }) => {
               className="p-2 border rounded"
             />
           </div>
-          <div className="mb-4">
+          <div className="mb-4 text-sec2">
             <label className="block mb-2" htmlFor="routingNumber">
               Routing Number:
             </label>
@@ -99,7 +101,7 @@ const PurchasePopup = ({ onClose }) => {
           </div>
           {paymentMethod === "creditCard" && (
             <>
-              <div className="mb-4">
+              <div className="mb-4 text-sec2">
                 <label className="block mb-2" htmlFor="cardNumber">
                   Card Number:
                 </label>
@@ -112,7 +114,7 @@ const PurchasePopup = ({ onClose }) => {
                   className="p-2 border rounded"
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-4 text-sec2">
                 <label className="block mb-2" htmlFor="expirationDate">
                   Expiration Date:
                 </label>
@@ -144,13 +146,13 @@ const PurchasePopup = ({ onClose }) => {
             <button
               type="button"
               onClick={onClose}
-              className="mr-2 bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded"
+              className="mr-2 bg-gray-400 hover:bg-sec2 text-white px-4 py-2 rounded"
             >
               Close
             </button>
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+              className="bg-pry hover:bg-[#f8e5c4] text-white px-4 py-2 rounded"
             >
               Submit
             </button>

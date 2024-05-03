@@ -24,17 +24,17 @@ function Checkout() {
     return cartItems.map((item) => (
       <div
         key={item._id}
-        className="flex items-center justify-between py-2 border-b border-gray-300"
+        className="flex items-center justify-around py-2 border-b border-gray-300"
       >
-        <div className="flex items-center justify-center space-x-2 ml-[11px] mr-11">
+        <div className="flex items-center text-sec2 justify-center space-x-2 ml-[11px] mr-11">
           <img
             src={item.imageUrl}
             alt={item.ProductName}
             className="w-16 h-16 object-cover"
           />
           <div className=" justify-center flex text-center">
-            <p className="text-lg">{item.ProductName}</p>
-            <p className="text-gray-600">{formatToCurrency(item.price)}</p>
+            <p className="text-lg text-sec2">{item.ProductName}</p>
+            <p className="text-pry font-bold">{formatToCurrency(item.price)}</p>
           </div>
         </div>
         <div className="flex items-center space-x-6">
@@ -89,17 +89,17 @@ function Checkout() {
   return (
     <div>
       {/* Header */}
-      <div className="main text-sec2">
+      <div className="main flex justify-around gap-[70%] items-center text-sec2">
         <Link to={"/"}>
           <img
             src={logo}
-            className="w-[6rem] shadow-lg bg-sec2 rounded-full"
+            className="w-[7rem] flex justify-around items-center shadow-lg bg-sec2 rounded-full"
             alt=""
           />
         </Link>
         <div
           id="text2"
-          className="dark:md:hover:text-pry  text-sec2 flex justify-center text-center"
+          className="dark:md:hover:text-pry  text-sec2 text-center"
         >
           <Link to={"/product"}>
             <p className="font-bold"> Product</p>
@@ -140,11 +140,14 @@ function Checkout() {
           </div>
 
           {/* Checkout Button */}
+
           <div className="checkout cursor-pointer rounded-full w-[25%] text-sec2">
             {" "}
-            <div>
-              <button onClick={handleCheckout}>CHECKOUT</button>
-            </div>
+            <Link to={"/purchasepage"}>
+              <div>
+                <button onClick={handleCheckout}>CHECKOUT</button>
+              </div>
+            </Link>
           </div>
         </section>
       </section>

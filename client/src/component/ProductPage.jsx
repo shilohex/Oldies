@@ -68,8 +68,8 @@ const ProductPage = () => {
           src={singleProduct?.imageUrl}
           alt={singleProduct?.productName}
         />
-        <p className="text-gray-700">{singleProduct?.description}</p>
-        <p className="text-gray-900 mt-4">
+        <p className="text-sec2">{singleProduct?.description}</p>
+        <p className="text-pry font-bold mt-4">
           Price: {singleProduct && formatToCurrency(singleProduct?.price)}
         </p>
 

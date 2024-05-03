@@ -9,7 +9,12 @@ const Productscard = ({
   imageUrl,
   shopName,
   _id,
+  onDelete,
+  isVendor,
 }) => {
+  const handleDelete = () => {
+    onDelete(_id);
+  };
   return (
     <>
       <Link to={`/products/${_id}`}>
@@ -17,13 +22,24 @@ const Productscard = ({
           <img
             src={imageUrl}
             alt={productName}
-            className="w-full h-40 object-cover"
+            className="w-full object-cover"
           />
           <div className="p-4">
-            <h2 className="text-lg font-semibold mb-2">{productName}</h2>
-            <p className="text-gray-700">{description}</p>
-            <p className="text-gray-900 mt-2">{formatToCurrency(price)}</p>
-            <p className="text-gray-900 mt-2">{shopName}</p>
+            <h2 className="text-lg  text-sec2 font-semibold mb-2">
+              {productName}
+            </h2>
+            <p className="text-sec2 ">{description}</p>
+            <p className="text-pry font-bold mt-2">{formatToCurrency(price)}</p>
+            <p className="text-sec mt-2">{shopName}</p>
+            {isVendor && (
+              <button
+                onClick={handleDelete}
+                className="mt-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+              >
+                {" "}
+                Delete
+              </button>
+            )}
           </div>
         </div>
       </Link>
