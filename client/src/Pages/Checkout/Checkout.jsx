@@ -143,11 +143,9 @@ function Checkout() {
 
           <div className="checkout cursor-pointer rounded-full w-[25%] text-sec2">
             {" "}
-            <Link to={"/purchasepage"}>
-              <div>
-                <button onClick={handleCheckout}>CHECKOUT</button>
-              </div>
-            </Link>
+            <div>
+              <button onClick={handleCheckout}>CHECKOUT</button>
+            </div>
           </div>
         </section>
       </section>
