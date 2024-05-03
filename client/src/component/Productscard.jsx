@@ -22,13 +22,13 @@ const Productscard = ({
           <img
             src={imageUrl}
             alt={productName}
-            className="w-full object-cover"
+            className="w-full h-40 object-cover"
           />
           <div className="p-4">
             <h2 className="text-lg  text-sec2 font-semibold mb-2">
               {productName}
             </h2>
-            <p className="text-sec2 ">{description}</p>
+            <p className="text-sec2 line-clamp-2 h-[2lh] ">{description}</p>
             <p className="text-pry font-bold mt-2">{formatToCurrency(price)}</p>
             <p className="text-sec mt-2">{shopName}</p>
             {isVendor && (
