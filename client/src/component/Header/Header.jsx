@@ -57,19 +57,19 @@ const Header = ({ bgcol = "rgba(0,0,0,0.3)", txtcol = "#000" }) => {
             </form> */}
           </div>
           <div className="group relative z-10">
-            <p className="bg-pry px-3 py-1 border-pry rounded-xl text-sec2">
+            <p className="bg-pry px-3 py-1 text-[1rem] border-pry rounded-xl text-sec2">
               Sign Up
             </p>
             <div className="hidden shadow-md rounded group-hover:flex bg-[#f3f3f3] absolute text-black top-full -left-1/2 flex-col-reverse gap-2 p-4">
               <Link
                 to={"/vendor/signup"}
-                className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm text-sec2"
+                className="hover:bg-[#ffa20186] px-4 py-1 text-[1rem] rounded-sm text-sec2"
               >
                 Vendor
               </Link>
               <Link
                 to={"/customer/signup"}
-                className="hover:bg-[#ffa20186] px-4 py-1 rounded-sm text-sec2"
+                className="hover:bg-[#ffa20186] px-4 py-1 text-[1rem] rounded-sm text-sec2"
               >
                 Buyer
               </Link>
@@ -83,13 +83,13 @@ const Header = ({ bgcol = "rgba(0,0,0,0.3)", txtcol = "#000" }) => {
             </Link>
           </div>
 
-          <div className="flex text-[#f3f3f3]  space-x-12 hover:ease-in-out duration-300">
+          <div className="flex text-[#f3f3f3] text-[1rem] text-center space-x-12 hover:ease-in-out duration-300">
             <Link className="hover:text-[2.5rem relative" to={"/checkout"}>
               {" "}
-              <p className="bg-red-500 p-1 rounded-full h-7 w-7 font-bold grid place-items-center absolute -top-4 -right-4">
+              <p className="bg-sec2 p-1 rounded-full h-7 w-7 font-bold grid place-items-center absolute -top-4 -right-4">
                 {cartItems.length}
               </p>
-              <FaShoppingBag size={25} />{" "}
+              <FaShoppingBag size={20} />{" "}
             </Link>
           </div>
 
