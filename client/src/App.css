@@ -1,7 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   /* CSS rules for tablets and smaller screens */
+  .head {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 991px) {
+  header {
+    padding: 2rem 4%;
+  }
+
+  div {
+    padding: 10rem 4% 2rem;
+  }
+
+  .home {
+    padding: 0 4%;
+  }
+
+  .footer {
+    padding: 2rem 4%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    background: var(--second-bg-color);
+  }
+
+  img {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 4%;
+    background-color: #dce8ea;
+    box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
 }
 
 * {

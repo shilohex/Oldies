@@ -7,7 +7,7 @@ export default function Carousel({
   autoslideinterval = 3000,
 }) {
   const [curr, setCurr] = useState(0);
-  document.title = curr;
+  // document.title = curr;
 
   const prev = () =>
     setCurr((curr) => (curr == 0 ? slides.length - 1 : curr - 1));

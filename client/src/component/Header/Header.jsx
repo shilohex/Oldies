@@ -31,7 +31,7 @@ const Header = ({ bgcol = "rgba(0,0,0,0.3)", txtcol = "#000" }) => {
           <Link to={"/"}>
             <img
               src={logo}
-              className="w-[7rem] shadow-lg bg-sec2 rounded-full"
+              className="w-[6rem] shadow-lg bg-sec2 rounded-full"
               alt=""
             />
           </Link>
