@@ -18,8 +18,8 @@ const Landingpage = () => {
   const slides = [
     "https://www.avintagesplendor.com/wp-content/uploads/2022/09/best-thrift-stores-in-la-scaled.jpg",
     "https://images.squarespace-cdn.com/content/v1/5511f9bee4b068878ae651fb/1530653308676-KRW7ALWO6UF7V6DGXXQ9/image-asset.jpeg",
-    "https://www.avintagesplendor.com/wp-content/uploads/2022/09/best-thrift-stores-in-la-scaled.jpg",
-    "https://images.squarespace-cdn.com/content/v1/5511f9bee4b068878ae651fb/1530653308676-KRW7ALWO6UF7V6DGXXQ9/image-asset.jpeg",
+    "https://www.thehoarde.com/resources/images/blog-pictures/Antique-Store-Abroad-crop-v2.jpeg",
+    "https://buyafricanantiques.com/wp-content/uploads/2023/03/David-Norden-Shop-930x620.jpg",
   ];
   return (
     <>
