@@ -16,7 +16,9 @@ import Carousel from "../../component/carousel";
 
 const Landingpage = () => {
   const slides = [
-    "https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg",
+    "https://ideogram.ai/g/UbCTcTFZRU-ZjNV15xYgSw/0",
+    "https://pixabay.com/photos/thrift-store-clothes-fashion-8266036/",
+    // "https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg",
     "https://www.avintagesplendor.com/wp-content/uploads/2022/09/best-thrift-stores-in-la-scaled.jpg",
     "https://images.squarespace-cdn.com/content/v1/5511f9bee4b068878ae651fb/1530653308676-KRW7ALWO6UF7V6DGXXQ9/image-asset.jpeg",
     "https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Bisnis%20Thrift%20Shop/23%20Maret%202022.jpeg",

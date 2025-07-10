@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-
-@media (max-width: 1200px) {
-  /* CSS rules for tablets and smaller screens */
+/* CSS rules for tablets and smaller screens */
+/* @media (max-width: 1200px) {
+  
   .head {
     font-size: 55%;
   }
@@ -43,7 +43,7 @@
     background-color: #dce8ea;
     box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.2);
   }
-}
+} */
 
 * {
   margin: 0;
