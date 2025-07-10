@@ -16,10 +16,8 @@ import Carousel from "../../component/carousel";
 
 const Landingpage = () => {
   const slides = [
-    "https://ideogram.ai/g/eTpjLNc0QIKhwIpc4A5qvQ/2",
     "https://www.avintagesplendor.com/wp-content/uploads/2022/09/best-thrift-stores-in-la-scaled.jpg",
     "https://images.squarespace-cdn.com/content/v1/5511f9bee4b068878ae651fb/1530653308676-KRW7ALWO6UF7V6DGXXQ9/image-asset.jpeg",
-    "https://ideogram.ai/g/UbCTcTFZRU-ZjNV15xYgSw/1",
     "https://www.avintagesplendor.com/wp-content/uploads/2022/09/best-thrift-stores-in-la-scaled.jpg",
     "https://images.squarespace-cdn.com/content/v1/5511f9bee4b068878ae651fb/1530653308676-KRW7ALWO6UF7V6DGXXQ9/image-asset.jpeg",
   ];
